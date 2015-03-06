@@ -37,7 +37,7 @@ public class WorldGeneratorHandler implements IWorldGenerator
 			tag.setBoolean("hiveRetrogen", true);
 		}
 		
-		event.getData().setTag("MagicBees", tag);
+		event.getData().setTag("SpaceBees", tag);
 	}
 	
 	@Mod.EventHandler
@@ -45,7 +45,7 @@ public class WorldGeneratorHandler implements IWorldGenerator
 	{
 		boolean doRetrogen = false;
 		
-		NBTTagCompound tag = (NBTTagCompound)event.getData().getTag("MagicBees");
+		NBTTagCompound tag = (NBTTagCompound)event.getData().getTag("SpaceBees");
 		if (tag == null)
 		{
 			doRetrogen = true;

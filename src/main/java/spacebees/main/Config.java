@@ -42,11 +42,8 @@ public class Config
 	public boolean	BeeInfusionsAdded;
 	public boolean	AddThaumcraftItemsToBackpacks;
 	public boolean	DisableUpdateNotification;
-	public boolean	AreMagicPlanksFlammable;
-	public boolean	UseImpregnatedStickInTools;
 	public boolean	MoonDialShowsPhaseInText;
 	public boolean	DoSpecialHiveGen;
-	public String	ThaumaturgeExtraItems;
 	public int		CapsuleStackSizeMax;
 	public boolean	DoHiveRetrogen;
 	public boolean	ForceHiveRegen;
@@ -69,8 +66,8 @@ public class Config
 	public static ItemMoonDial moonDial;
 	
 	//----- Liquid Capsules --------------------
-	public static ItemCapsule magicCapsule;
-	public static ItemCapsule voidCapsule;
+//	public static ItemCapsule magicCapsule;
+//	public static ItemCapsule voidCapsule;
 	
 	//----- Apiary Frames ----------------------
 //	public static ItemMagicHiveFrame hiveFrameMagic;
@@ -233,7 +230,7 @@ public class Config
 		
 
 		p = configuration.get("general", "capsuleStackSize", 64);
-		p.comment = "Allows you to edit the stack size of the capsules in MagicBees if using GregTech, \n" +
+		p.comment = "Allows you to edit the stack size of the capsules in SpaceBees if using GregTech, \n" +
 				"or the reduced capsule size in Forestry & Railcraft. Default: 64";
 		this.CapsuleStackSizeMax = p.getInt();
 		
@@ -247,15 +244,15 @@ public class Config
 		this.MoonDialShowsPhaseInText = p.getBoolean(false);
 		
 		p = configuration.get("general", "doSpecialHiveGen", true);
-		p.comment = "Set to false if you hate fun and do not want special hives generating in Magic biomes.";
+		p.comment = "Set to false if you hate fun and do not want special hives generating in Space biomes.";
 		this.DoSpecialHiveGen = p.getBoolean(true);
 		
 		p = configuration.get("Retrogen", "doHiveRetrogen", false);
-		p.comment = "Set to true to enable retroactive worldgen of Magic Bees hives.";
+		p.comment = "Set to true to enable retroactive worldgen of Space Bees hives.";
 		this.DoHiveRetrogen = p.getBoolean(false);
 		
 		p = configuration.get("Retrogen", "forceHiveRegen", false);
-		p.comment = "Set to true to force a regeneration of Magic Bees hives. Will set config option to false after parsed. (Implies doHiveRetrogen=true)";
+		p.comment = "Set to true to force a regeneration of Space Bees hives. Will set config option to false after parsed. (Implies doHiveRetrogen=true)";
 		this.ForceHiveRegen = p.getBoolean(false);
 		
 		if (this.ForceHiveRegen)

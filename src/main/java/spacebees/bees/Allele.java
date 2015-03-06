@@ -47,21 +47,6 @@ public class Allele implements IAllele
 	public static void registerDeprecatedAlleleReplacements()
 	{
 		IAlleleRegistry registry = AlleleManager.alleleRegistry;
-
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.fertilityHighDominant",	Allele.getBaseAllele("fertilityHigh"));
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.speedBlinding",			speedBlinding);
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effectNodeAttract",		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effectNodePurify",		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effectNodeFlux",			Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effectNodeCharge",		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("magicbees.effectNodeAttract", 		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("magicbees.effectNodePurify",		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("magicbees.effectNodeFlux",			Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("magicbees.effectNodeCharge",		Allele.getBaseAllele("effectBeatific"));
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effectCurative",			effectCleansing);
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effecteffectDigSpeed",	effectDigSpeed);
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effecteffectMoveSpeed",	effectMoveSpeed);
-		registry.registerDeprecatedAlleleReplacement("thaumicbees.effecteffectSlowSpeed",	effectSlowSpeed);
 		//registry.registerDeprecatedAlleleReplacement("thaumicbees.speciesEsoteric",			BeeSpecies.ESOTERIC);
 		
 	}

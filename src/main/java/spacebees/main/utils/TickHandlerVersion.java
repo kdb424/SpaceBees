@@ -1,9 +1,10 @@
-/*package magicbees.main.utils;
+//TODO Make this work
+/*package spacebees.main.utils;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
 
-import magicbees.main.MagicBees;
+import spacebees.main.SpaceBees;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatMessageComponent;
 import cpw.mods.fml.common.IScheduledTickHandler;

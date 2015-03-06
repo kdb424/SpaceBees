@@ -7,7 +7,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class CommonProxy
 {
-	public static final String DOMAIN = "magicbees";
+	public static final String DOMAIN = "spacebees";
 	public static final String TEXTURE = "textures/";
 	public static final String GUI_TEXTURE = TEXTURE + "gui/";
 	public static final String ITEM_TEXTURE = TEXTURE + "items/";
@@ -15,7 +15,7 @@ public class CommonProxy
 	public static final String LANGS = "lang/";
 	
 	@Deprecated
-	public static final String RESOURCE_PATH = "/assets/magicbees/";
+	public static final String RESOURCE_PATH = "/assets/spacebees/";
 	@Deprecated
 	public static final String TEXTURE_PATH = RESOURCE_PATH + "textures/";
 	@Deprecated

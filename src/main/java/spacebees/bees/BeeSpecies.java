@@ -113,7 +113,7 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 			EnumTemperature preferredTemp, EnumHumidity preferredHumidity,
 			boolean hasGlowEffect, boolean isSpeciesSecret, boolean isSpeciesCounted, boolean isSpeciesDominant)
 	{
-		this.uid = "magicbees.species" + speciesName;
+		this.uid = "spacebees.species" + speciesName;
 		this.dominant = isSpeciesDominant;
 		AlleleManager.alleleRegistry.registerAllele(this);
 		binomial = genusName;
