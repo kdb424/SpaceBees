@@ -1,0 +1,13 @@
+[
+{
+  "modid": "SpaceBees",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "name": "Space Bees",
+  "url": "http://bit.ly/XFDvLY",
+  "description": "Space themed bee expansion for Forestry. Galacticraft and TC3!",
+  "authors": [ "kdb424," ],
+  "credits": "SirSengir, Azanor, Binnie & the Forestry Dev peeps, MysteriousAges",
+  "logoFile": "/mods/magicbees/textures/logo.png"
+}
+]
