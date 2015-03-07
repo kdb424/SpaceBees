@@ -1,14 +1,13 @@
 package spacebees.bees;
 
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.apiculture.EnumBeeChromosome;
 import forestry.api.apiculture.EnumBeeType;
 import forestry.api.genetics.IAllele;
-import spacebees.main.utils.compat.ExtraBeesHelper;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 
 /**
  * Simply a class to hold all the functions to manage species' default genomes.
@@ -17,12 +16,12 @@ import net.minecraft.nbt.NBTTagList;
  */
 public class BeeGenomeManager
 {
-	// Basic genome for All thaumic bees.
+	// Basic genome for All space bees.
 	private static IAllele[] getTemplateModBase()
 	{
 		IAllele[] genome = new IAllele[EnumBeeChromosome.values().length];
 
-//		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MYSTICAL;
+//		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
 		genome[EnumBeeChromosome.SPEED.ordinal()] =  Allele.getBaseAllele("speedSlowest");
 		genome[EnumBeeChromosome.LIFESPAN.ordinal()] = Allele.getBaseAllele("lifespanShorter");
 		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
@@ -31,6 +30,7 @@ public class BeeGenomeManager
 		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceNone");
 		genome[EnumBeeChromosome.TOLERANT_FLYER.ordinal()] = Allele.getBaseAllele("boolFalse");
 		genome[EnumBeeChromosome.CAVE_DWELLING.ordinal()] = Allele.getBaseAllele("boolFalse");
+		//TODO Add Moon Flower
 		genome[EnumBeeChromosome.FLOWER_PROVIDER.ordinal()] = Allele.getBaseAllele("flowersVanilla");
 		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringSlowest");
 		genome[EnumBeeChromosome.TERRITORY.ordinal()] = Allele.getBaseAllele("territoryDefault");
@@ -47,23 +47,54 @@ public class BeeGenomeManager
 	}
 	
 	
+	public static IAllele[] getTemplateMoon()
+	{
+		IAllele[] genome = getTemplateMoonBase();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
+		genome[EnumBeeChromosome.LIFESPAN.ordinal()] = Allele.getBaseAllele("lifespanLong");
+		genome[EnumBeeChromosome.SPEED.ordinal()] = Allele.getBaseAllele("speedNorm");
+		genome[EnumBeeChromosome.TERRITORY.ordinal()] = Allele.getBaseAllele("territoryLarger");
+		genome[EnumBeeChromosome.EFFECT.ordinal()] = Allele.getBaseAllele("effectMisanthrope");
+		
+		return genome;
+	}
+	private static IAllele[] getTemplateMoonBase()
+	{
+		IAllele[] genome = getTemplateModBase();
+
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceDown2");
+		genome[EnumBeeChromosome.FLOWER_PROVIDER.ordinal()] = Allele.getBaseAllele("flowersNether");
+		genome[EnumBeeChromosome.NOCTURNAL.ordinal()] = Allele.getBaseAllele("boolTrue");
+		genome[EnumBeeChromosome.CAVE_DWELLING.ordinal()] = Allele.getBaseAllele("boolTrue");
+		genome[EnumBeeChromosome.EFFECT.ordinal()] = Allele.getBaseAllele("effectAggressive");
+		genome[EnumBeeChromosome.LIFESPAN.ordinal()] = Allele.getBaseAllele("lifespanShort");
+		
+		return genome;
+	}
+	
 	
 	/*--------------------- Other Stuff ---------------------------------- */
 	
 	public static ItemStack getBeeNBTForSpecies(BeeSpecies species, EnumBeeType beeType)
 	{
-		ItemStack taggedBee;
+		ItemStack taggedBee = null;
 		switch (beeType)
 		{
 			case PRINCESS:
 				//TODO Use FML GameRegistry
+				//TODO See if change worked
+				taggedBee = new ItemStack(GameRegistry.findItem("forestry", "beePrincessGE"));
 				//taggedBee = ItemInterface.getItem("beePrincessGE");
 				break;
 			case QUEEN:
+				taggedBee = new ItemStack(GameRegistry.findItem("forestry", "beeQueenGE"));
 				//taggedBee = ItemInterface.getItem("beeQueenGE");
 				break;
 			case DRONE:
 			default:
+				taggedBee = new ItemStack(GameRegistry.findItem("forestry", "beeDroneGE"));
 				//taggedBee = ItemInterface.getItem("beeDroneGE");
 				break;
 		}
@@ -72,10 +103,10 @@ public class BeeGenomeManager
 		
 		addGeneToCompound(EnumBeeChromosome.SPECIES, species, tags);
 		
-		//taggedBee.setTagCompound(tags);
+		taggedBee.setTagCompound(tags);
 		
-		//return taggedBee;
-		return null;
+		return taggedBee;
+		//return null;
 	}
 	
 	private static void addGeneToCompound(EnumBeeChromosome gene, IAllele allele, NBTTagCompound compound)
@@ -92,4 +123,6 @@ public class BeeGenomeManager
 		selectedGene.setString("UID0", allele.getUID());
 		selectedGene.setString("UID1", allele.getUID());		
 	}
+
+
 }

@@ -13,9 +13,9 @@ import forestry.api.genetics.IClassification;
 
 public enum BeeClassification implements IClassification
 {
-	//VEILED("Veiled", "Velatapis"),
-	//ARCANE("Arcane", "Arcanapis"),
-	//SUPERNATURAL("Supernatural", "Occultapis"),
+	// Bees are named here
+	// Name is In game name followed with scientific name
+	MOON("Moon", "Luna"),
 
 	;
 	

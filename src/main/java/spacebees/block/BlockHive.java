@@ -6,11 +6,13 @@ import forestry.api.core.Tabs;
 import spacebees.block.types.HiveType;
 import spacebees.main.SpaceBees;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
@@ -20,7 +22,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockHive extends Block
+public class BlockHive extends BlockContainer
 {	
 	public BlockHive()
 	{
@@ -108,5 +110,11 @@ public class BlockHive extends Block
 	    }
 	
 	    return new ItemStack(item, 1, getDamageValue(world, x, y, z) & 7);
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		//return new TileSwarm();
+		return null;
 	}
 }

@@ -36,7 +36,7 @@ public class FeatureHive
 		}
 	}
 	
-	public static boolean generateHiveCurious(World world, Random random, int coordX, int coordZ, boolean initialGen)
+	public static boolean generateHiveLunar(World world, Random random, int coordX, int coordZ, boolean initialGen)
 	{
 		int coordY = getHeight(world, random, coordX, coordZ);
 		boolean doSpawn = false;
@@ -46,8 +46,8 @@ public class FeatureHive
 				world.isAirBlock(coordX, coordY, coordZ) &&
 				b != null && b.isLeaves(world, coordX, coordY + 1, coordZ))
 		{
-			//world.setBlock(coordX, coordY, coordZ, Config.hive, HiveType.CURIOUS.ordinal(), 3);
-			if (logSpawns) 	FMLLog.info("Spawning %s hive at: X %d,  Z %d, Y %d", "Curious", coordX, coordZ, coordY);
+			world.setBlock(coordX, coordY, coordZ, Config.hive, HiveType.LUNAR.ordinal(), 3);
+			if (logSpawns) 	FMLLog.info("Spawning %s hive at: X %d,  Z %d, Y %d", "Lunar", coordX, coordZ, coordY);
 			doSpawn = true;
 		}
 		

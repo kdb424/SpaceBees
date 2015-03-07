@@ -79,9 +79,9 @@ public class Config
 //	public static ItemMagicHiveFrame hiveFrameOblivion;
 	
 	//----- Backpacks ------------------------------------------
-	public static Item thaumaturgeBackpackT1;
-	public static Item thaumaturgeBackpackT2;
-	public static BackpackDefinition thaumaturgeBackpackDef;
+//	public static Item thaumaturgeBackpackT1;
+//	public static Item thaumaturgeBackpackT2;
+//	public static BackpackDefinition thaumaturgeBackpackDef;
 
 	//----- Forestry Blocks ------------------------------------
 	public static Block fHiveBlock;

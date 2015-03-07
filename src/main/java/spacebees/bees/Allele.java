@@ -47,7 +47,7 @@ public class Allele implements IAllele
 	public static void registerDeprecatedAlleleReplacements()
 	{
 		IAlleleRegistry registry = AlleleManager.alleleRegistry;
-		//registry.registerDeprecatedAlleleReplacement("thaumicbees.speciesEsoteric",			BeeSpecies.ESOTERIC);
+//		registry.registerDeprecatedAlleleReplacement("spacebees.speciesMoon", BeeSpecies.MOON);
 		
 	}
 

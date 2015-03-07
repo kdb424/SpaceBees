@@ -35,24 +35,41 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 //	ATTUNED("Attuned", "similis",
 //			BeeClassification.VEILED, 0x0086A8, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
 	
+	//speciesName, String genusName
+	//MOON("Moon", "luna",
+	// classification, firstColour,preferredTemp, preferredHumidity, isSecret, hasGlowEffect, isSpeciesDominant
+	//		BeeClassification.MOON, 0xDFDFEF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, false),
+	MOON("Moon", "luna",
+			BeeClassification.MOON, 0xDFDFEF, EnumTemperature.NORMAL, EnumHumidity.ARID, true, false),
+	
 
 	;
 	
 	public static void setupBeeSpecies()
 	{
 		// Species must be set inactive prior to registration.
-
-
+		
+		//Change to cheese
+//		MOON.addSpecialty(new ItemStack(Items.chicken, 1), 9);
+//		
+//		MOON.addProduct(Config.combs.getStackForType(CombType.MOON), 15)
+//		.setGenome(BeeGenomeManager.getTemplateMoon())
+//		.register();
+		
+		
+		MOON.addProduct(Config.combs.getStackForType(CombType.MOON), 24)
+		.setGenome(BeeGenomeManager.getTemplateMoon())
+		.register();
 		//Thermal Expansion Bees
 		
-		if (ThermalExpansionHelper.isActive())
-		{
-			
-		}
-		else
-		{
-					
-		}
+//		if (ThermalExpansionHelper.isActive())
+//		{
+//			
+//		}
+//		else
+//		{
+//					
+//		}
 	
 
     }

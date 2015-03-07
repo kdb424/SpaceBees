@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 
 public enum CombType
 {
+	MOON("moon", true)
 //	MUNDANE("mundane", true),
 //	MOLTEN("molten", true),
 

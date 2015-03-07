@@ -111,6 +111,9 @@
 	<entry key="spacebees.species.description"></entry>
 	-->
 
+	<entry key="spacebees.speciesMoon">Crumbling</entry>
+	<entry key="spacebees.speciesMoon.description">They have a corrosive effect on their surroundings, rapidly aging them.|Apinomicon</entry>
+
 	<!-- Bee Alleles -->
 	<entry key="spacebees.speedBlinding">Blinding</entry>
 	<entry key="spacebees.effectCurative">Cleansing</entry>

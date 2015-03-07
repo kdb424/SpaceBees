@@ -15,6 +15,8 @@ import spacebees.main.utils.LocalizationManager;
 import spacebees.main.utils.VersionInfo;
 import spacebees.main.utils.compat.*;
 import spacebees.world.WorldGeneratorHandler;
+import forestry.api.apiculture.hives.IHiveDescription;
+import forestry.api.apiculture.hives.IHiveRegistry;
 
 @Mod(
 		modid=VersionInfo.ModName,

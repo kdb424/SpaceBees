@@ -25,7 +25,7 @@ public class VersionInfo
 
 	public static final String Logo = "/gfx/spacebees/logo.png";
 
-	public static final String Depends = "required-after:Forestry;after:ExtraBees;after:ThermalExpansion";
+	public static final String Depends = "required-after:Forestry;required-after:GalacticraftCore;after:ExtraBees;after:ThermalExpansion";
 
 	boolean criticalUpdate;
 	boolean newVersion;
