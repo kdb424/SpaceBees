@@ -1,18 +1,19 @@
 package spacebees.item;
 
+import java.util.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import spacebees.item.types.CapsuleType;
 import spacebees.item.types.FluidType;
 import spacebees.main.CommonProxy;
+import spacebees.main.utils.TabSpaceBees;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-
-import java.util.List;
 
 public class ItemCapsule extends Item
 {
@@ -22,6 +23,7 @@ public class ItemCapsule extends Item
 	{
 		super();
 		this.capsuleType = type;
+		this.setCreativeTab(TabSpaceBees.tabSpaceBees);
 		this.setHasSubtypes(true);
 		this.setMaxStackSize(maxStackSize);
 		this.setUnlocalizedName("capsule." + type.toString().toLowerCase());
@@ -64,19 +66,19 @@ public class ItemCapsule extends Item
 		return true;
 	}
 	
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1IconRegister)
-    {
-    	this.itemIcon = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":capsule" + this.capsuleType.getName().substring(0, 1).toUpperCase() 
-    			+ this.capsuleType.getName().substring(1));
-    	for (FluidType t : FluidType.values())
-    	{
-    		if (t != FluidType.EMPTY && t.liquidIcon == null)
-    		{
-    			t.liquidIcon = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":liquids/" + t.liquidID.toLowerCase());
-    		}
-    	}
-    }
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister par1IconRegister)
+	{
+		this.itemIcon = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":capsule" + this.capsuleType.getName().substring(0, 1).toUpperCase()
+				+ this.capsuleType.getName().substring(1));
+		for (FluidType t : FluidType.values())
+		{
+			if (t != FluidType.EMPTY && t.liquidIcon == null)
+			{
+				t.liquidIcon = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":liquids/" + t.liquidID.toLowerCase());
+			}
+		}
+	}
 
 	@Override
 	@SideOnly(Side.CLIENT)

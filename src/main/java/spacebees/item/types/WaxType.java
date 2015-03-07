@@ -1,13 +1,12 @@
 package spacebees.item.types;
 
 import spacebees.main.utils.LocalizationManager;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public enum WaxType
 {
-//	MAGIC("magic", true, 0xd242df),
-//	SOUL("soul", false, 0x967C63),
-//	AMNESIC("amnesic", true, 0x856DFF)
+	MAGIC("magic", true, 0xd242df),
+	SOUL("soul", false, 0x967C63),
+	AMNESIC("amnesic", true, 0x856DFF)
 	;
 	
 	private WaxType(String n, boolean sp, int c)

@@ -12,13 +12,7 @@ public enum NuggetType
 	LEAD,
 	DIAMOND,
 	EMERALD,
-	APATITE, 
-	ELECTRUM,
-	PLATINUM,
-	NICKEL,
-	INVAR,
-	BRONZE,
-	ENDERIUM,
+	APATITE,
 	;
 	
 	private Item targetIngot;
@@ -53,4 +47,5 @@ public enum NuggetType
 	{
 		return LocalizationManager.getLocalizedString("nugget." + this.toString().toLowerCase());
 	}
+
 }

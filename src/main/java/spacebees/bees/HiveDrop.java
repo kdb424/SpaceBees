@@ -3,7 +3,6 @@ package spacebees.bees;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import spacebees.block.types.HiveType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import forestry.api.apiculture.EnumBeeType;

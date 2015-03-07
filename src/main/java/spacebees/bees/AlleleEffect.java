@@ -2,14 +2,9 @@ package spacebees.bees;
 
 import java.util.List;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
-//import spacebees.main.SpaceBees;
-import spacebees.main.utils.LocalizationManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.World;
 import forestry.api.apiculture.IAlleleBeeEffect;
 import forestry.api.apiculture.IBeeGenome;
 import forestry.api.apiculture.IBeeHousing;
@@ -50,7 +45,6 @@ public abstract class AlleleEffect extends Allele implements IAlleleBeeEffect
 	}
 	
 	/**
-	 * 
 	 * @param genome
 	 * @param storedData
 	 * @param housing

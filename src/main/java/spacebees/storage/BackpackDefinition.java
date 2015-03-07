@@ -1,7 +1,6 @@
 package spacebees.storage;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,8 +9,8 @@ import forestry.api.storage.IBackpackDefinition;
 
 /**
  * Backpack definition for Forestry.
- * @author MysteriousAges
  *
+ * @author MysteriousAges
  */
 public class BackpackDefinition implements IBackpackDefinition
 {
@@ -35,9 +34,14 @@ public class BackpackDefinition implements IBackpackDefinition
 	}
 
 	@Override
-	public String getName()
+	public String getName(ItemStack backpack)
 	{
-		return this.name;
+		return name;
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 	@Override
@@ -61,13 +65,16 @@ public class BackpackDefinition implements IBackpackDefinition
 		}
 	}
 
-	
 	@Override
-	@Deprecated
 	public boolean isValidItem(EntityPlayer player, ItemStack itemStack)
 	{
+		return isValidItem(itemStack);
+	}
+
+	@Override
+	public boolean isValidItem(ItemStack itemStack) {
 		boolean flag = false;
-		
+
 		ItemStack stack;
 		for (int i = 0; i < this.items.size() && !flag; i++)
 		{
@@ -78,26 +85,16 @@ public class BackpackDefinition implements IBackpackDefinition
 				flag = stack.getItemDamage() == -1 || stack.getItemDamage() == itemStack.getItemDamage();
 			}
 		}
-		
+
 		return flag;
 	}
 
 	@Override
-	public String getName(ItemStack backpack) {
-		// TODO Make sure this works
-		return this.name;
-	}
+	public void addValidItems(List<ItemStack> validItems)
+	{
+		for (ItemStack s : validItems)
+			addValidItem(s);
 
-	@Override
-	public void addValidItems(List<ItemStack> validItems) {
-		// TODO Add functionality from above and update for new API and 1.7.10
-		
-	}
-
-	@Override
-	public boolean isValidItem(ItemStack itemstack) {
-		// TODO Update to use API
-		return false;
 	}
 
 }

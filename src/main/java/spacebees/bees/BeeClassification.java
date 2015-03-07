@@ -3,20 +3,15 @@ package spacebees.bees;
 import java.util.ArrayList;
 
 import spacebees.main.utils.LocalizationManager;
-
-
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
 import forestry.api.genetics.AlleleManager;
 import forestry.api.genetics.IAlleleSpecies;
 import forestry.api.genetics.IClassification;
 
 public enum BeeClassification implements IClassification
 {
-	// Bees are named here
-	// Name is In game name followed with scientific name
+	//TODO ADD BEES
+//	VEILED("Veiled", "Velatapis"),
 	MOON("Moon", "Luna"),
-
 	;
 	
 	private String uID;

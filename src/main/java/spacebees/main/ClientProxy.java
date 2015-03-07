@@ -1,21 +1,22 @@
 package spacebees.main;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.EntityFX;
-import net.minecraft.item.Item;
-import net.minecraft.world.World;
-import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.MinecraftForgeClient;
 
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy
-{	@Override
+{
+	@Override
 	public void registerRenderers()
 	{
 		super.registerRenderers();
 		
+//		RenderIdEffectJar = RenderingRegistry.getNextAvailableRenderId();
+//		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Config.effectJar), EffectJarRenderer.instance);
+//		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEffectJar.class, EffectJarRenderer.instance);
 	}
 }

@@ -1,10 +1,10 @@
 package spacebees.bees;
 
-import forestry.api.apiculture.IBeeRoot;
-import forestry.api.genetics.AlleleManager;
 import spacebees.block.types.HiveType;
 import spacebees.item.types.DropType;
 import spacebees.main.Config;
+import forestry.api.apiculture.IBeeRoot;
+import forestry.api.genetics.AlleleManager;
 
 public class BeeManager
 {
@@ -21,6 +21,6 @@ public class BeeManager
 		
 		HiveType.initHiveData();
 		
-//		beeRoot.setResearchSuitability(Config.drops.getStackForType(DropType.INTELLECT), 0.5f);
+		beeRoot.setResearchSuitability(Config.drops.getStackForType(DropType.INTELLECT), 0.5f);
 	}
 }

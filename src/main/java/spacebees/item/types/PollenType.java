@@ -1,12 +1,11 @@
 package spacebees.item.types;
 
 import spacebees.main.utils.LocalizationManager;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public enum PollenType
 {
-//	UNUSUAL("unusual", 0xD8417B, 0xA03059),
-//	PHASED("phased", 0x4974B4, 0x456BA5),
+	UNUSUAL("unusual", 0xD8417B, 0xA03059),
+	PHASED("phased", 0x4974B4, 0x456BA5),
 	;
 	
 	private PollenType(String pName, int colourA, int colourB)

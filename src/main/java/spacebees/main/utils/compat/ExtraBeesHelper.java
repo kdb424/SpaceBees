@@ -1,9 +1,11 @@
 package spacebees.main.utils.compat;
 
+import java.lang.reflect.Field;
+
+import cpw.mods.fml.common.Loader;
+import spacebees.main.Config;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import java.lang.reflect.Field;
 
 public class ExtraBeesHelper
 {
@@ -81,7 +83,7 @@ public class ExtraBeesHelper
 		PINK,
 		LIMEGREEN,
 		MAGENTA,
-		LIGHTGRAY,		
+		LIGHTGRAY,
 		NICKEL,
 		INVAR,
 		GLOWSTONE,
@@ -89,28 +91,32 @@ public class ExtraBeesHelper
 		PULP,
 		MULCH,
 		COMPOST,
-		SAWDUST,
-		;
+		SAWDUST,;
 	}
-	
+
 	private static boolean isEBPresent = false;
-	
+
 	public static boolean isActive()
 	{
 		return isEBPresent;
 	}
-	
+
 	public static void preInit()
 	{
-		if (cpw.mods.fml.common.Loader.isModLoaded("ExtraBees"))
+		if (Loader.isModLoaded("ExtraBees") && Config.extraBeesActive)
 		{
 			isEBPresent = true;
 		}
 	}
-	
-	public static void init() {}
-	public static void postInit() {}
-	
+
+	public static void init()
+	{
+	}
+
+	public static void postInit()
+	{
+	}
+
 	public static ItemStack getExtraBeeItem(String field)
 	{
 		ItemStack value = null;
@@ -118,11 +124,13 @@ public class ExtraBeesHelper
 		{
 			Class src = Class.forName("binnie.extrabees.core.ExtraBeeItem");
 			Field f = src.getDeclaredField(field);
-			
-			Item i = (Item) f.get(null);
+
+			Item i = (Item)f.get(null);
 			value = new ItemStack(i);
 		}
-		catch (Exception e) { }
+		catch (Exception e)
+		{
+		}
 		return value;
 	}
 }

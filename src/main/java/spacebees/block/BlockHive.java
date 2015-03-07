@@ -1,29 +1,26 @@
 package spacebees.block;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import forestry.api.core.Tabs;
 import spacebees.block.types.HiveType;
-import spacebees.main.SpaceBees;
+import spacebees.main.Config;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.IWorldAccess;
 import net.minecraft.world.World;
+import forestry.api.core.Tabs;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class BlockHive extends BlockContainer
-{	
+public class BlockHive extends Block
+{
 	public BlockHive()
 	{
 		super(new MaterialHive());
@@ -40,7 +37,7 @@ public class BlockHive extends BlockContainer
 	}
 
 	@Override
-	public int damageDropped(int meta) 
+	public int damageDropped(int meta)
 	{
 		return meta;
 	}
@@ -62,7 +59,7 @@ public class BlockHive extends BlockContainer
 	{
 		for (HiveType type : HiveType.values())
 		{
-			if (type.show || SpaceBees.getConfig().ForestryDebugEnabled)
+			if (type.show || Config.forestryDebugEnabled)
 			{
 				itemsList.add(new ItemStack(this, 1, type.ordinal()));
 			}
@@ -98,23 +95,17 @@ public class BlockHive extends BlockContainer
 	{
 		Block block = world.getBlock(x, y, z);
 
-	    if (block.isAir(world, x, y, z))
-	    {
-	        return null;
-	    }
+		if (block.isAir(world, x, y, z))
+		{
+			return null;
+		}
 
-	    Item item = Item.getItemFromBlock(block);
-	    if (item == null)
-	    {
-	        return null;
-	    }
-	
-	    return new ItemStack(item, 1, getDamageValue(world, x, y, z) & 7);
-	}
+		Item item = Item.getItemFromBlock(block);
+		if (item == null)
+		{
+			return null;
+		}
 
-	@Override
-	public TileEntity createNewTileEntity(World world, int meta) {
-		//return new TileSwarm();
-		return null;
+		return new ItemStack(item, 1, getDamageValue(world, x, y, z) & 7);
 	}
 }

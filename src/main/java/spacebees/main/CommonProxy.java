@@ -1,10 +1,5 @@
 package spacebees.main;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import cpw.mods.fml.client.FMLClientHandler;
-
 public class CommonProxy
 {
 	public static final String DOMAIN = "spacebees";
@@ -13,6 +8,9 @@ public class CommonProxy
 	public static final String ITEM_TEXTURE = TEXTURE + "items/";
 	public static final String MODEL = "model/";
 	public static final String LANGS = "lang/";
+
+	public static final String ForestryID = "forestry";
+//	public static final String ThaumcraftID = "Thaumcraft";
 	
 	@Deprecated
 	public static final String RESOURCE_PATH = "/assets/spacebees/";
@@ -21,10 +19,8 @@ public class CommonProxy
 	@Deprecated
 	public static final String MODEL_PATH = RESOURCE_PATH + "model/";
 	@Deprecated
-	//TODO Remove this
 	public static final String TCBEES_RESEARCH = RESOURCE_PATH + "research/";
 	@Deprecated
-	//TODO Remove this
 	public static final String TCBEES_LOCDIR = RESOURCE_PATH + "lang/";
 	
 	public static String FORESTRY_GFX_ITEMS;
@@ -32,6 +28,8 @@ public class CommonProxy
 	
 	@Deprecated
 	public static final String GUI_PATH = TEXTURE_PATH + "gui/";
+	
+//	public static int RenderIdEffectJar;
 	
 	public void registerRenderers() { }
 

@@ -1,17 +1,18 @@
 package spacebees.item;
 
+import java.util.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import spacebees.item.types.ResourceType;
 import spacebees.main.CommonProxy;
+import spacebees.main.utils.TabSpaceBees;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-
-import java.util.List;
 
 public class ItemMiscResources extends Item
 {
@@ -20,6 +21,7 @@ public class ItemMiscResources extends Item
 	public ItemMiscResources()
 	{
 		super();
+		this.setCreativeTab(TabSpaceBees.tabSpaceBees);
 		this.setHasSubtypes(true);
 		this.setUnlocalizedName("miscResources");
 		GameRegistry.registerItem(this, "miscResources");
@@ -28,7 +30,7 @@ public class ItemMiscResources extends Item
 	public ItemStack getStackForType(ResourceType type)
 	{
 		return new ItemStack(this, 1, type.ordinal());
-	}	
+	}
 	
 	public ItemStack getStackForType(ResourceType type, int count)
 	{
@@ -48,15 +50,15 @@ public class ItemMiscResources extends Item
 		}
 	}
 	
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1IconRegister)
-    {
-    	for (int i = 0; i < ResourceType.values().length; i++)
-    	{
-    		this.icons[i] = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":" + ResourceType.values()[i].getName());
-    	}
-    }
-    
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister par1IconRegister)
+	{
+		for (int i = 0; i < ResourceType.values().length; i++)
+		{
+			this.icons[i] = par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":" + ResourceType.values()[i].getName());
+		}
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconFromDamage(int meta)

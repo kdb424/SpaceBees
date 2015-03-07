@@ -53,6 +53,4 @@ public enum FluidType
 	{
 		return LocalizationManager.getLocalizedString("liquid." + liquidID);
 	}
-
-
 }
