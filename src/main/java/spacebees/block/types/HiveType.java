@@ -60,13 +60,6 @@ public enum HiveType
 		ItemStack[] combs = new ItemStack[] { Config.combs.getStackForType(CombType.MUNDANE) };
 		HiveDrop valiantDrop = new HiveDrop(BeeGenomeManager.addRainResist(ForestryHelper.getTemplateForestryForSpecies("Valiant")), combs, 5);
 
-//		MOON.drops.add(new HiveDrop(BeeSpecies.MOON.getGenome(), combs, 80).setIgnoblePercentage(0.7f));
-//		//MOON.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.MOON.getGenome()), combs, 15));
-//		MOON.drops.add(valiantDrop);
-//
-//		UNUSUAL.drops.add(new HiveDrop(BeeSpecies.UNUSUAL.getGenome(), combs, 80).setIgnoblePercentage(0.7f));
-//		UNUSUAL.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.UNUSUAL.getGenome()), combs, 15));
-//		UNUSUAL.drops.add(valiantDrop);
 //
 //		RESONANT.drops.add(new HiveDrop(BeeSpecies.SORCEROUS.getGenome(), combs, 80).setIgnoblePercentage(0.7f));
 //		RESONANT.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.SORCEROUS.getGenome()), combs, 20));
@@ -77,15 +70,7 @@ public enum HiveType
 //		DEEP.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.ATTUNED.getGenome()), combs, 20));
 //		MOON.drops.add(valiantDrop);
 //
-//		combs = new ItemStack[] { Config.combs.getStackForType(CombType.MOLTEN), new ItemStack(Items.glowstone_dust, 6) };
 
-//		INFERNAL.drops.add(new HiveDrop(BeeSpecies.INFERNAL.getGenome(), combs, 80).setIgnoblePercentage(0.5f));
-//		INFERNAL.drops.add(new HiveDrop(ForestryHelper.getTemplateForestryForSpecies("Steadfast"), combs, 3));
-//
-//		combs = new ItemStack[] { Config.combs.getStackForType(CombType.FORGOTTEN), new ItemStack(Items.ender_pearl, 1) };
-//
-//		OBLIVION.drops.add(new HiveDrop(BeeSpecies.OBLIVION.getGenome(), combs, 80));
-//		OBLIVION.drops.add(new HiveDrop(ForestryHelper.getTemplateForestryForSpecies("Steadfast"), combs, 9));
 	}
 	
 	private HiveType(String hiveName, int light, boolean visible)

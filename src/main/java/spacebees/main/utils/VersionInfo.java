@@ -20,12 +20,12 @@ public class VersionInfo
 	public static final String Version = "@VERSION@";
 	public static final String Build = "@BUILD_NUMBER@";
 	public static final String MCVersion = "@MCVERSION@";
-	public static final String VersionURL = "http://bit.ly/magicbeesVersionInfo";
-	public static final String GUI_FACTORY_CLASS = "magicbees.client.gui.GuiFactory";
+	public static final String VersionURL = "http://url";
+	public static final String GUI_FACTORY_CLASS = "spacebees.client.gui.GuiFactory";
 
 	public static final String Logo = "/gfx/magicbees/logo.png";
 
-	public static final String Depends = "required-after:Forestry@[3.1.1.4,);required-after:GalacticraftCore;after:ExtraBees;";
+	public static final String Depends = "required-after:GalacticraftCore;required-after:Forestry@[3.1.1.4,);after:ExtraBees;";
 
 	boolean criticalUpdate;
 	boolean newVersion;

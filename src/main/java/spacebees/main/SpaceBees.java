@@ -8,9 +8,9 @@ import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
 import spacebees.bees.BeeManager;
-import spacebees.client.gui.GUIHandler;
 import spacebees.main.utils.CraftingManager;
 import spacebees.main.utils.IMCManager;
 import spacebees.main.utils.LogHelper;
@@ -31,7 +31,6 @@ public class SpaceBees
 	@SidedProxy(serverSide = "spacebees.main.CommonProxy", clientSide = "spacebees.main.ClientProxy")
 	public static CommonProxy proxy;
 
-	public GUIHandler guiHandler;
 	private String configsPath;
 	private Config modConfig;
 
@@ -49,7 +48,7 @@ public class SpaceBees
 		this.modConfig.setupItems();
 		
 		// LocalizationManager.setupLocalizationInfo();
-		
+				
 		LogHelper.info("Preinit completed");
 	}
 
@@ -66,8 +65,6 @@ public class SpaceBees
 	{
 		ModHelper.postInit();
 
-		this.guiHandler = new GUIHandler();
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, this.guiHandler);
 
 		proxy.registerRenderers();
 
@@ -79,6 +76,8 @@ public class SpaceBees
 		CraftingManager.registerLiquidContainers();
 
 		VersionInfo.doVersionCheck();
+		net.minecraftforge.common.BiomeDictionary.registerAllBiomes();
+		System.out.println(net.minecraftforge.common.BiomeDictionary.isBiomeRegistered(102));
 		LogHelper.info("Postinit completed");
 	}
 
