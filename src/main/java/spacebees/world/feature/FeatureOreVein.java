@@ -2,10 +2,11 @@ package spacebees.world.feature;
 
 import java.util.Random;
 
+import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-
+import net.minecraftforge.oredict.OreDictionary;
 import spacebees.main.utils.BlockUtil;
 
 public class FeatureOreVein
@@ -14,6 +15,7 @@ public class FeatureOreVein
 	public static final FeatureOreVein netherQuartzGen;
 	public static final FeatureOreVein glowstoneGen;
 	public static final FeatureOreVein endStoneGen;
+//	public static final FeatureOreVein moonStoneGen;
 
 	static
 	{

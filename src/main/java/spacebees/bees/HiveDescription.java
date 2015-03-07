@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import cpw.mods.fml.common.network.internal.FMLMessage;
 import cpw.mods.fml.common.registry.GameRegistry;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import net.minecraft.block.Block;
@@ -25,6 +26,7 @@ import spacebees.main.Config;
 import spacebees.main.utils.BlockUtil;
 import spacebees.main.utils.LogHelper;
 import spacebees.world.feature.FeatureOreVein;
+import spacebees.world.feature.HiveGenMoon;
 import spacebees.world.feature.HiveGenNether;
 import spacebees.world.feature.HiveGenOblivion;
 import spacebees.world.feature.HiveGenUnderground;
@@ -32,7 +34,9 @@ import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 
 public enum HiveDescription implements IHiveDescription {
 //	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree());
-	MOON(HiveType.MOON, 1.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon));
+	//TODO Get matadata block properly so it properly spawns 
+	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon));
+	;
 	
 
 
@@ -53,33 +57,33 @@ public enum HiveDescription implements IHiveDescription {
 	public static void initHiveData()
 	{
 
-		//TODO Fix this
-		MOON.biomes.add(BiomeDictionary.Type.HOT);
-		MOON.biomes.add(BiomeDictionary.Type.COLD);
-		MOON.biomes.add(BiomeDictionary.Type.WET);
-		MOON.biomes.add(BiomeDictionary.Type.DRY);
-		MOON.biomes.add(BiomeDictionary.Type.SAVANNA);
-		MOON.biomes.add(BiomeDictionary.Type.CONIFEROUS);
-		MOON.biomes.add(BiomeDictionary.Type.JUNGLE);
-		MOON.biomes.add(BiomeDictionary.Type.SPOOKY);
-		MOON.biomes.add(BiomeDictionary.Type.DEAD);
-		MOON.biomes.add(BiomeDictionary.Type.LUSH);
-		MOON.biomes.add(BiomeDictionary.Type.NETHER);
-		MOON.biomes.add(BiomeDictionary.Type.END);
-		MOON.biomes.add(BiomeDictionary.Type.MUSHROOM);
-		MOON.biomes.add(BiomeDictionary.Type.MAGICAL);
-		MOON.biomes.add(BiomeDictionary.Type.OCEAN);
-		MOON.biomes.add(BiomeDictionary.Type.RIVER);
-		MOON.biomes.add(BiomeDictionary.Type.WATER);
-		MOON.biomes.add(BiomeDictionary.Type.MESA);
-		MOON.biomes.add(BiomeDictionary.Type.FOREST);
-		MOON.biomes.add(BiomeDictionary.Type.PLAINS);
-		MOON.biomes.add(BiomeDictionary.Type.HILLS);
-		MOON.biomes.add(BiomeDictionary.Type.SWAMP);
-		MOON.biomes.add(BiomeDictionary.Type.SANDY);
-		MOON.biomes.add(BiomeDictionary.Type.SNOWY);
-		MOON.biomes.add(BiomeDictionary.Type.WASTELAND);
-		MOON.biomes.add(BiomeDictionary.Type.BEACH);
+//		//TODO Fix this
+//		MOON.biomes.add(BiomeDictionary.Type.HOT);
+//		MOON.biomes.add(BiomeDictionary.Type.COLD);
+//		MOON.biomes.add(BiomeDictionary.Type.WET);
+//		MOON.biomes.add(BiomeDictionary.Type.DRY);
+//		MOON.biomes.add(BiomeDictionary.Type.SAVANNA);
+//		MOON.biomes.add(BiomeDictionary.Type.CONIFEROUS);
+//		MOON.biomes.add(BiomeDictionary.Type.JUNGLE);
+//		MOON.biomes.add(BiomeDictionary.Type.SPOOKY);
+//		MOON.biomes.add(BiomeDictionary.Type.DEAD);
+//		MOON.biomes.add(BiomeDictionary.Type.LUSH);
+//		MOON.biomes.add(BiomeDictionary.Type.NETHER);
+//		MOON.biomes.add(BiomeDictionary.Type.END);
+//		MOON.biomes.add(BiomeDictionary.Type.MUSHROOM);
+//		MOON.biomes.add(BiomeDictionary.Type.MAGICAL);
+//		MOON.biomes.add(BiomeDictionary.Type.OCEAN);
+//		MOON.biomes.add(BiomeDictionary.Type.RIVER);
+//		MOON.biomes.add(BiomeDictionary.Type.WATER);
+//		MOON.biomes.add(BiomeDictionary.Type.MESA);
+//		MOON.biomes.add(BiomeDictionary.Type.FOREST);
+//		MOON.biomes.add(BiomeDictionary.Type.PLAINS);
+//		MOON.biomes.add(BiomeDictionary.Type.HILLS);
+//		MOON.biomes.add(BiomeDictionary.Type.SWAMP);
+//		MOON.biomes.add(BiomeDictionary.Type.SANDY);
+//		MOON.biomes.add(BiomeDictionary.Type.SNOWY);
+//		MOON.biomes.add(BiomeDictionary.Type.WASTELAND);
+//		MOON.biomes.add(BiomeDictionary.Type.BEACH);
 
 	}
 
