@@ -10,12 +10,14 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.MinecraftForge;
 import spacebees.bees.BeeManager;
 import spacebees.main.utils.CraftingManager;
 import spacebees.main.utils.IMCManager;
 import spacebees.main.utils.LogHelper;
 import spacebees.main.utils.VersionInfo;
 import spacebees.main.utils.compat.ModHelper;
+import spacebees.world.feature.HiveGenMars;
 
 @Mod(
 		modid = VersionInfo.ModName,
@@ -56,6 +58,8 @@ public class SpaceBees
 	public void init(FMLInitializationEvent event)
 	{
 		ModHelper.init();
+		
+		MinecraftForge.EVENT_BUS.register(new HiveGenMars());
 
 		LogHelper.info("Init completed");
 	}

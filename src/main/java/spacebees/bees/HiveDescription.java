@@ -33,10 +33,26 @@ import spacebees.world.feature.HiveGenUnderground;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 
 public enum HiveDescription implements IHiveDescription {
-//	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree());
+	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()),
+	MARS(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()),
+	
 	//TODO Get matadata block properly so it properly spawns 
-	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)),
-	MARS(HiveType.MARS, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon));
+//	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)),
+//	MARS(HiveType.MARS, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)), 
+//	MARS(HiveType.MARS, 2.0f, new HiveGenUnderground(10, 10, 6)) {
+//		@Override
+//		public void postGen(World world, int x, int y, int z)
+//		{
+//			super.postGen(world, x, y, z);
+//			Random random = world.rand;
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x + 1, y, z, 2);
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x - 1, y, z, 2);
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y + 1, z, 2);
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y - 1, z, 2);
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z + 1, 2);
+//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z - 1, 2);
+//		}
+//	},
 	;
 	
 

@@ -103,7 +103,7 @@ public class ForestryHelper
 		HiveDescription.initHiveData();
 
 		registerHive(hiveRegistry, HiveDescription.MOON);
-//		registerHive(hiveRegistry, HiveDescription.UNUSUAL);
+		registerHive(hiveRegistry, HiveDescription.MARS);
 //		registerHive(hiveRegistry, HiveDescription.RESONANT);
 //		registerHive(hiveRegistry, HiveDescription.DEEP);
 //		registerHive(hiveRegistry, HiveDescription.INFERNAL);
