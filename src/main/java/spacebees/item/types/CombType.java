@@ -5,6 +5,7 @@ import spacebees.main.utils.LocalizationManager;
 public enum CombType
 {
 	MOON("moon", true),
+	MARS("mars", true),
 	MUNDANE("mundane", true),
 	MOLTEN("molten", true),
 	OCCULT("occult", true),

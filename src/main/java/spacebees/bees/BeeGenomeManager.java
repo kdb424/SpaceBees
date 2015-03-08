@@ -18,6 +18,7 @@ import forestry.api.genetics.IAllele;
 public class BeeGenomeManager
 {
 	// Basic genome for All spacebees.
+	// TODO Properly configure
 	private static IAllele[] getTemplateModBase()
 	{
 		IAllele[] genome = new IAllele[EnumBeeChromosome.values().length];
@@ -36,6 +37,63 @@ public class BeeGenomeManager
 		genome[EnumBeeChromosome.TERRITORY.ordinal()] = Allele.getBaseAllele("territoryDefault");
 		genome[EnumBeeChromosome.EFFECT.ordinal()] = Allele.getBaseAllele("effectNone");
 
+		return genome;
+	}
+	
+	public static IAllele[] getTemplateBaseMoon()
+	{
+		IAllele[] genome = getTemplateModBase();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");
+		
+		return genome;
+	}
+	
+	public static IAllele[] getTemplateLunation()
+	{
+		IAllele[] genome = getTemplateBaseMoon();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.LUNATION;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");
+		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
+		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringAverage");
+		
+		return genome;
+	}
+	public static IAllele[] getTemplateCore()
+	{
+		IAllele[] genome = getTemplateBaseMoon();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.CORE;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth1");
+		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
+		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringAverage");
+		
+		return genome;
+	}
+	public static IAllele[] getTemplateMars()
+	{
+		IAllele[] genome = getTemplateModBase();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MARS;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");		
+		return genome;
+	}
+	public static IAllele[] getTemplateSatellite()
+	{
+		IAllele[] genome = getTemplateMars();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.SATELLITE;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
+		return genome;
+	}
+	public static IAllele[] getTemplateTerra()
+	{
+		IAllele[] genome = getTemplateSatellite();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.TERRA;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth2");		
 		return genome;
 	}
 

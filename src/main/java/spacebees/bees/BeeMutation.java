@@ -57,8 +57,17 @@ public class BeeMutation implements IBeeMutation
 					}
 				}
 			}
-			new BeeMutation(species, Allele.getBaseSpecies("Common"), ForestryHelper.getTemplateForestryForSpecies("Cultivated"), 12);
+//			new BeeMutation(species, Allele.getBaseSpecies("Common"), ForestryHelper.getTemplateForestryForSpecies("Cultivated"), 12);
+//			Base bee 1 + base bee 2 = mutated bee
 //			new BeeMutation(species, Allele.getBaseSpecies("Cultivated"), BeeSpecies.ELDRITCH, 12);
+//			new BeeMutation(Allele.getBaseSpecies("Forest"), BeeSpecies.MOON, BeeSpecies.LUNATION, 8);
+//			new BeeMutation(BeeSpecies.MOON, BeeSpecies.MOON, BeeSpecies.LUNATION, 12);
+//			new BeeMutation(species, Allele.getBaseSpecies("Cultivated"), BeeSpecies.LUNATION, 12);
+			//TODO Set proper mutation rates not for testing
+			new BeeMutation(Allele.getBaseSpecies("Imperial"), BeeSpecies.MOON, BeeSpecies.LUNATION, 100);
+			new BeeMutation(BeeSpecies.MOON, BeeSpecies.LUNATION, BeeSpecies.CORE, 100);
+			new BeeMutation(Allele.getBaseSpecies("Industrious"), BeeSpecies.MARS, BeeSpecies.SATELLITE, 100);
+			new BeeMutation(BeeSpecies.MARS, BeeSpecies.SATELLITE, BeeSpecies.TERRA, 100);
 		}
 		
 

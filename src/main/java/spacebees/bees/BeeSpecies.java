@@ -43,8 +43,29 @@ import forestry.api.genetics.IMutation;
 
 public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 {
+//	Places to add a bee
+//	BeeSpecies
+//	BeeMutation
+//	BeeClasification
+//	BeeGenomeManager
+//	CombType
+//	If Hive Bee
+//	HiveType
+//	HiveDescription
+	
+	//TODO Fix colors
 	MOON("Moon", "Luna",
-			BeeClassification.MOON, 0xFFFFFF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.MOON, 0xFFFFFF, 0xFFFFFF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	LUNATION("Lunation", "Lunationis",
+			BeeClassification.LUNATION, 0xFFFFFF, 0xEFEFDF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	CORE("Core", "Core",
+			BeeClassification.CORE, 0xFFFFFF, 0x992222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	MARS("Mars", "March",
+			BeeClassification.MARS, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	SATELLITE("Satellite", "Satellite",
+			BeeClassification.SATELLITE, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	TERRA("Terra", "Terra",
+			BeeClassification.TERRA, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
 	;
 	
 	public static void setupBeeSpecies()
@@ -54,6 +75,22 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 		MOON.addProduct(Config.combs.getStackForType(CombType.MOON), 15)
 				.setGenome(BeeGenomeManager.getTemplateMoon())
 				.register();
+		LUNATION.addProduct(Config.combs.getStackForType(CombType.MOON), 15)
+			.setGenome(BeeGenomeManager.getTemplateLunation())
+			.register();
+		//TODO Add custom comb/drop
+		CORE.addProduct(Config.combs.getStackForType(CombType.MOON), 15)
+			.setGenome(BeeGenomeManager.getTemplateCore())
+			.register();
+		MARS.addProduct(Config.combs.getStackForType(CombType.MARS), 15)
+		.setGenome(BeeGenomeManager.getTemplateMars())
+		.register();
+		SATELLITE.addProduct(Config.combs.getStackForType(CombType.MARS), 15)
+		.setGenome(BeeGenomeManager.getTemplateSatellite())
+		.register();
+		TERRA.addProduct(Config.combs.getStackForType(CombType.MARS), 15)
+		.setGenome(BeeGenomeManager.getTemplateTerra())
+		.register();
 
 	}
 

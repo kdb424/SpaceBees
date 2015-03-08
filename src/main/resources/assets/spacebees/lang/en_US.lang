@@ -10,6 +10,7 @@ tile.hive.moon.name=Moon Hive
 
 #Combs
 comb.moon=Moon Comb
+comb.mars=Mars Comb
 comb.mundane=Mundane Comb
 comb.molten=Molten Comb
 comb.occult=Occult Comb
@@ -100,7 +101,7 @@ resource.startNode=Bees and Magic
 resource.crystalAspect=Crystalized %s Aspect
 
 #Frames
-item.frameMagic.name=Magic Frame
+item.frameSpace.name=Space Frame
 item.frameResilient.name=Resilient Frame
 item.frameGentle.name=Gentle Frame
 item.frameMetabolic.name=Metabolic Frame
@@ -146,7 +147,7 @@ moon.new=New Moon
 backpack.thaumaturge=Thaumaturge's Backpack
 
 #Itemgroups
-itemGroup.magicBees=Magic Bees
+itemGroup.spaceBees=Space Bees
 
 #Misc
 misc.level=Level %s
@@ -166,10 +167,21 @@ research.node.chaotic=Chaotic
 research.block.crystals=Crystal Cluster
 
 #Species
+classification.moon=Moon
 spacebees.speciesMoon=Moon
 spacebees.speciesMoon.description=SPAAAAAAAAACE!
+spacebees.speciesLunation=Lunation
+spacebees.speciesLunation.description=SPAAAAAAAAACE2!
+spacebees.speciesCore=Core
+spacebees.speciesCore.description=SPAAAAAAAAACE3!
 
-
+classification.mars=Mars
+spacebees.speciesMars=Mars
+spacebees.speciesMars.description=MARS!!!!
+spacebees.speciesSatellite=Satellite
+spacebees.speciesSatellite.description=MARS2!!!!
+spacebees.speciesTerra=Terra
+spacebees.speciesTerra.description=MARS3!!!!
 
 flowerProvider.book=Books
 flowerProvider.magic=Thaumic Flowers

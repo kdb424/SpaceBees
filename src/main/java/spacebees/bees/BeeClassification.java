@@ -10,8 +10,12 @@ import forestry.api.genetics.IClassification;
 public enum BeeClassification implements IClassification
 {
 	//TODO ADD BEES
-//	VEILED("Veiled", "Velatapis"),
 	MOON("Moon", "Luna"),
+	LUNATION("Lunation", "Lunationis"),
+	CORE("Core", "Core"),
+	MARS("Mars", "March"),
+	SATELLITE("Satellite", "Satellite"),
+	TERRA("Terra", "Terra")
 	;
 	
 	private String uID;

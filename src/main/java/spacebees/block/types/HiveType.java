@@ -30,7 +30,8 @@ public enum HiveType
 //	INFERNAL("infernal", 15, false),
 //	OBLIVION("oblivion", 7, false),
 	//TODO Learn what numbers do
-	MOON("moon", 12, true)
+	MOON("moon", 12, true),
+	MARS("mars", 12, true)
 	;
 	
 	private static String[] nameList;
@@ -67,6 +68,9 @@ public enum HiveType
 //
 		combs = new ItemStack[] { Config.combs.getStackForType(CombType.MOON) };
 		MOON.drops.add(new HiveDrop(BeeSpecies.MOON.getGenome(), combs, 80).setIgnoblePercentage(0.65f));
+		combs = new ItemStack[] { Config.combs.getStackForType(CombType.MARS) };
+		MARS.drops.add(new HiveDrop(BeeSpecies.MARS.getGenome(), combs, 80).setIgnoblePercentage(0.65f));
+//		MOON.drops.add(new HiveDrop(BeeSpecies.LUNATION.getGenome(), combs, 80).setIgnoblePercentage(0.85f));
 //		DEEP.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.ATTUNED.getGenome()), combs, 20));
 //		MOON.drops.add(valiantDrop);
 //
