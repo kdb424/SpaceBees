@@ -23,12 +23,6 @@ import spacebees.main.utils.compat.ForestryHelper;
 
 public enum HiveType
 {
-//	CURIOUS("curious", 12, true),
-//	UNUSUAL("unusual", 12, true),
-//	RESONANT("resonant", 12, true),
-//	DEEP("deep", 4, false),
-//	INFERNAL("infernal", 15, false),
-//	OBLIVION("oblivion", 7, false),
 	//TODO Learn what numbers do
 	MOON("moon", 12, true),
 	MARS("mars", 12, true)

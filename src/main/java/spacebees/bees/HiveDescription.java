@@ -26,7 +26,7 @@ import spacebees.main.Config;
 import spacebees.main.utils.BlockUtil;
 import spacebees.main.utils.LogHelper;
 import spacebees.world.feature.FeatureOreVein;
-import spacebees.world.feature.HiveGenMoon;
+import spacebees.world.feature.HiveGenMars;
 import spacebees.world.feature.HiveGenNether;
 import spacebees.world.feature.HiveGenOblivion;
 import spacebees.world.feature.HiveGenUnderground;
