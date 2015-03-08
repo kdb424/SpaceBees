@@ -34,7 +34,7 @@ import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 
 public enum HiveDescription implements IHiveDescription {
 	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()),
-	MARS(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()),
+	MARS(HiveType.MARS, 3.0f, HiveManager.genHelper.tree()),
 	
 	//TODO Get matadata block properly so it properly spawns 
 //	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)),

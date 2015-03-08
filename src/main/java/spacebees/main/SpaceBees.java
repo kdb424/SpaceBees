@@ -18,6 +18,7 @@ import spacebees.main.utils.LogHelper;
 import spacebees.main.utils.VersionInfo;
 import spacebees.main.utils.compat.ModHelper;
 import spacebees.world.feature.HiveGenMars;
+import spacebees.world.feature.HiveGenMoon;
 
 @Mod(
 		modid = VersionInfo.ModName,
@@ -59,6 +60,7 @@ public class SpaceBees
 	{
 		ModHelper.init();
 		
+		MinecraftForge.EVENT_BUS.register(new HiveGenMoon());
 		MinecraftForge.EVENT_BUS.register(new HiveGenMars());
 
 		LogHelper.info("Init completed");
