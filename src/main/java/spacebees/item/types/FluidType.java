@@ -29,15 +29,15 @@ public enum FluidType
 	CRUSHEDICE("ice"),
 	MILK("milk"),
 	
-	// ExtraBees liquids
-	ACID("acid"),
-	POISON("poison"),
-	LIQUIDNITROGEN("liquidnitrogen"),
-	DNA("liquiddna"),
-	
-	// Railcraft
-	CREOSOTEOIL("creosote"),
-	STEAM("steam"),
+//	// ExtraBees liquids
+//	ACID("acid"),
+//	POISON("poison"),
+//	LIQUIDNITROGEN("liquidnitrogen"),
+//	DNA("liquiddna"),
+//	
+//	// Railcraft
+//	CREOSOTEOIL("creosote"),
+//	STEAM("steam"),
 	;
 	public String liquidID;
 	public int iconIdx;

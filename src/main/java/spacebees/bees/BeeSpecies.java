@@ -13,7 +13,6 @@ import spacebees.item.types.CombType;
 import spacebees.item.types.DropType;
 import spacebees.item.types.NuggetType;
 import spacebees.item.types.PollenType;
-import spacebees.item.types.ResourceType;
 import spacebees.main.CommonProxy;
 import spacebees.main.Config;
 import spacebees.main.utils.LocalizationManager;

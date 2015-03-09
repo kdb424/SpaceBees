@@ -14,8 +14,7 @@ import cpw.mods.fml.common.FMLLog;
  *
  * @author MysteriousAges
  */
-public class VersionInfo
-{
+public class VersionInfo {
 	public static final String ModName = "SpaceBees";
 	public static final String Version = "@VERSION@";
 	public static final String Build = "@BUILD_NUMBER@";
@@ -23,7 +22,7 @@ public class VersionInfo
 	public static final String VersionURL = "http://url";
 	public static final String GUI_FACTORY_CLASS = "spacebees.client.gui.GuiFactory";
 
-	public static final String Logo = "/gfx/magicbees/logo.png";
+	public static final String Logo = "/gfx/spacebees/logo.png";
 
 	public static final String Depends = "required-after:GalacticraftCore;required-after:Forestry@[3.1.1.4,);after:ExtraBees;";
 
@@ -39,61 +38,55 @@ public class VersionInfo
 	String modName;
 	String modVersion;
 	String releaseURL;
-	//Logger modLogger = FMLLog.getLogger();
 
-	public static int[] parseVersion(String rawVersion)
-	{
+	// Logger modLogger = FMLLog.getLogger();
+
+	public static int[] parseVersion(String rawVersion) {
 		ArrayList<Integer> versionTokens = new ArrayList<Integer>();
 		String[] tokens = rawVersion.trim().split("[\\. ]");
 
-		for (int i = 0; i < tokens.length; ++i)
-		{
+		for (int i = 0; i < tokens.length; ++i) {
 			tokens[i] = tokens[i].trim();
-			if (tokens[i].matches("[0-9]+"))
-			{
+			if (tokens[i].matches("[0-9]+")) {
 				versionTokens.add(Integer.valueOf(tokens[i]));
-			}
-			else if (tokens[i].matches("[0-9]+[a-z]"))
-			{
-				String numberString = tokens[i].substring(0, tokens[i].length() - 1);
+			} else if (tokens[i].matches("[0-9]+[a-z]")) {
+				String numberString = tokens[i].substring(0,
+						tokens[i].length() - 1);
 				versionTokens.add(Integer.valueOf(numberString));
-				versionTokens.add(Character.getNumericValue(tokens[i].charAt(tokens[i].length() - 1)));
+				versionTokens.add(Character.getNumericValue(tokens[i]
+						.charAt(tokens[i].length() - 1)));
 			}
 		}
 
-		// Can't use versionTokens.toArray 'cause that returns an Integer[], not int[]
+		// Can't use versionTokens.toArray 'cause that returns an Integer[], not
+		// int[]
 		int[] value = new int[versionTokens.size()];
-		for (int i = 0; i < value.length; ++i)
-		{
+		for (int i = 0; i < value.length; ++i) {
 			value[i] = versionTokens.get(i).intValue();
 		}
 		return value;
 	}
 
 	/* VERSION COMPARISON */
-	public static boolean beforeTargetVersion(String version, String target)
-	{
+	public static boolean beforeTargetVersion(String version, String target) {
 		boolean result = false;
 		int[] versionTokens = parseVersion(version);
 		int[] targetTokens = parseVersion(target);
 
-		for (int i = 0; i < versionTokens.length && i < targetTokens.length; ++i)
-		{
-			if (versionTokens[i] < targetTokens[i])
-			{
+		for (int i = 0; i < versionTokens.length && i < targetTokens.length; ++i) {
+			if (versionTokens[i] < targetTokens[i]) {
 				result = true;
 				break;
-			}
-			else if (versionTokens[i] > targetTokens[i])
-			{
+			} else if (versionTokens[i] > targetTokens[i]) {
 				result = false;
 				break;
 			}
 
-			if (i == versionTokens.length - 1 && versionTokens.length < targetTokens.length)
-			{
-				// If the versions compared are the same, but target has an extra token, it's probably a "letter" build
-				//  and is ahead of this one.
+			if (i == versionTokens.length - 1
+					&& versionTokens.length < targetTokens.length) {
+				// If the versions compared are the same, but target has an
+				// extra token, it's probably a "letter" build
+				// and is ahead of this one.
 				result = true;
 			}
 		}
@@ -101,16 +94,13 @@ public class VersionInfo
 		return result;
 	}
 
-	public static boolean afterTargetVersion(String version, String target)
-	{
+	public static boolean afterTargetVersion(String version, String target) {
 		boolean result = false;
 		int[] versionTokens = parseVersion(version);
 		int[] targetTokens = parseVersion(target);
 
-		for (int i = 0; i < versionTokens.length && i < targetTokens.length; ++i)
-		{
-			if (versionTokens[i] > targetTokens[i])
-			{
+		for (int i = 0; i < versionTokens.length && i < targetTokens.length; ++i) {
+			if (versionTokens[i] > targetTokens[i]) {
 				result = true;
 				break;
 			}
@@ -119,134 +109,127 @@ public class VersionInfo
 		return result;
 	}
 
-	public VersionInfo(String name, String version, String url)
-	{
+	public VersionInfo(String name, String version, String url) {
 		modName = name;
 		modVersion = latestModVersion = version;
 		releaseURL = url;
 	}
 
-	public VersionInfo(String name, String version, String url, Logger logger)
-	{
+	public VersionInfo(String name, String version, String url, Logger logger) {
 		modName = name;
 		modVersion = latestModVersion = version;
 		releaseURL = url;
-		//modLogger = logger;
+		// modLogger = logger;
 	}
 
-	public void checkForNewVersion()
-	{
+	public void checkForNewVersion() {
 		Thread versionCheckThread = new VersionCheckThread();
 		versionCheckThread.start();
 	}
 
-	public String getCurrentVersion()
-	{
+	public String getCurrentVersion() {
 		return modVersion;
 	}
 
-	public String getLatestVersion()
-	{
+	public String getLatestVersion() {
 		return latestModVersion;
 	}
 
-	public String getLatestMCVersion()
-	{
+	public String getLatestMCVersion() {
 		return latestMCVersion;
 	}
 
-	public String getVersionDescription()
-	{
+	public String getVersionDescription() {
 		return description;
 	}
 
-	public boolean isCriticalUpdate()
-	{
+	public boolean isCriticalUpdate() {
 		return criticalUpdate;
 	}
 
-	public boolean isNewVersionAvailable()
-	{
+	public boolean isNewVersionAvailable() {
 		return newVersion;
 	}
 
-	public boolean isMinecraftOutdated()
-	{
+	public boolean isMinecraftOutdated() {
 		return newMinecraftVersion;
 	}
 
-	public boolean isVersionCheckComplete()
-	{
+	public boolean isVersionCheckComplete() {
 		return versionCheckComplete;
 	}
 
 	/* VERSION CHECK THREAD CLASS */
-	private class VersionCheckThread extends Thread
-	{
+	private class VersionCheckThread extends Thread {
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				String location = VersionURL;
 
 				HttpURLConnection connection = null;
 
 				// Used to "dereference" any location headers we may get.
-				while (location != null && !location.isEmpty())
-				{
+				while (location != null && !location.isEmpty()) {
 					URL url = new URL(location);
-					connection = (HttpURLConnection)url.openConnection();
-					connection.setRequestProperty("User-Agent",
-							"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.60 Safari/537.17");
+					connection = (HttpURLConnection) url.openConnection();
+					connection
+							.setRequestProperty(
+									"User-Agent",
+									"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.60 Safari/537.17");
 					connection.connect();
 					location = connection.getHeaderField("Location");
 				}
 
-				BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(connection.getInputStream()));
 				latestModVersion = reader.readLine();
 				criticalUpdate = Boolean.parseBoolean(reader.readLine());
 				latestMCVersion = reader.readLine();
 				description = reader.readLine();
 				reader.close();
 
-				if (beforeTargetVersion(modVersion, latestModVersion))
-				{
-					FMLLog.info("An updated version of " + modName + " is available: " + latestModVersion + ".");
-					//modLogger.log(Level.INFO, "An updated version of " + modName + " is available: " +
-					//	latestModVersion + ".");
+				if (beforeTargetVersion(modVersion, latestModVersion)) {
+					FMLLog.info("An updated version of " + modName
+							+ " is available: " + latestModVersion + ".");
+					// modLogger.log(Level.INFO, "An updated version of " +
+					// modName + " is available: " +
+					// latestModVersion + ".");
 					newVersion = true;
-					if (criticalUpdate)
-					{
-						FMLLog.info("This update has been marked as CRITICAL and will ignore notification suppression" +
-								".");
-						//modLogger.log(Level.INFO, "This update has been marked as CRITICAL and will ignore " +
-						//	"notification suppression.");
+					if (criticalUpdate) {
+						FMLLog.info("This update has been marked as CRITICAL and will ignore notification suppression"
+								+ ".");
+						// modLogger.log(Level.INFO,
+						// "This update has been marked as CRITICAL and will ignore "
+						// +
+						// "notification suppression.");
 					}
-					if (beforeTargetVersion(MCVersion, latestMCVersion))
-					{
+					if (beforeTargetVersion(MCVersion, latestMCVersion)) {
 						newMinecraftVersion = true;
-						//modLogger.log(Level.INFO, "This update is for Minecraft " + latestMCVersion + ".");
-						FMLLog.info("This update is for Minecraft " + latestMCVersion + ".");
+						// modLogger.log(Level.INFO,
+						// "This update is for Minecraft " + latestMCVersion +
+						// ".");
+						FMLLog.info("This update is for Minecraft "
+								+ latestMCVersion + ".");
 					}
 				}
 
-			}
-			catch (Exception e)
-			{
-				//modLogger.log(Level.WARNING, "Version Check Failed: " + e.getMessage());
+			} catch (Exception e) {
+				// modLogger.log(Level.WARNING, "Version Check Failed: " +
+				// e.getMessage());
 				FMLLog.warning("Version check Failed: " + e.getMessage());
 			}
 			versionCheckComplete = true;
 		}
 	}
 
-	public static void doVersionCheck()
-	{
+	public static void doVersionCheck() {
 		VersionInfo main = new VersionInfo(ModName, Version, VersionURL);
-		/*TickHandlerVersion.registerModVersionInfo(main);
-		TickHandlerVersion.initialize();*/
-		//TickRegistry.registerScheduledTickHandler(TickHandlerVersion.instance, Side.CLIENT);
+		/*
+		 * TickHandlerVersion.registerModVersionInfo(main);
+		 * TickHandlerVersion.initialize();
+		 */
+		// TickRegistry.registerScheduledTickHandler(TickHandlerVersion.instance,
+		// Side.CLIENT);
 
 		VersionCheckThread thread = main.new VersionCheckThread();
 		thread.start();

@@ -33,29 +33,29 @@ import spacebees.world.feature.HiveGenUnderground;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 
 public enum HiveDescription implements IHiveDescription {
-	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()),
-	MARS(HiveType.MARS, 3.0f, HiveManager.genHelper.tree()),
-	
-	//TODO Get matadata block properly so it properly spawns 
-//	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)),
-//	MARS(HiveType.MARS, 3.0f, HiveManager.genHelper.ground(GCBlocks.blockMoon)), 
-//	MARS(HiveType.MARS, 2.0f, new HiveGenUnderground(10, 10, 6)) {
-//		@Override
-//		public void postGen(World world, int x, int y, int z)
-//		{
-//			super.postGen(world, x, y, z);
-//			Random random = world.rand;
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x + 1, y, z, 2);
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x - 1, y, z, 2);
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y + 1, z, 2);
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y - 1, z, 2);
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z + 1, 2);
-//			FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z - 1, 2);
-//		}
-//	},
-	;
-	
+	MOON(HiveType.MOON, 3.0f, HiveManager.genHelper.tree()), MARS(
+			HiveType.MARS, 3.0f, HiveManager.genHelper.tree()),
 
+	// TODO Get matadata block properly so it properly spawns
+	// MOON(HiveType.MOON, 3.0f,
+	// HiveManager.genHelper.ground(GCBlocks.blockMoon)),
+	// MARS(HiveType.MARS, 3.0f,
+	// HiveManager.genHelper.ground(GCBlocks.blockMoon)),
+	// MARS(HiveType.MARS, 2.0f, new HiveGenUnderground(10, 10, 6)) {
+	// @Override
+	// public void postGen(World world, int x, int y, int z)
+	// {
+	// super.postGen(world, x, y, z);
+	// Random random = world.rand;
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x + 1, y, z, 2);
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x - 1, y, z, 2);
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x, y + 1, z, 2);
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x, y - 1, z, 2);
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z + 1, 2);
+	// FeatureOreVein.redstoneGen.generateVein(world, random, x, y, z - 1, 2);
+	// }
+	// },
+	;
 
 	private static boolean logSpawns = Config.logHiveSpawns;
 
@@ -64,72 +64,36 @@ public enum HiveDescription implements IHiveDescription {
 	private final List<BiomeDictionary.Type> biomes = new ArrayList<BiomeDictionary.Type>();
 	private final IHiveGen hiveGen;
 
-	private HiveDescription(HiveType hiveType, float genChance, IHiveGen hiveGen)
-	{
+	private HiveDescription(HiveType hiveType, float genChance, IHiveGen hiveGen) {
 		this.hiveType = hiveType;
 		this.genChance = genChance;
 		this.hiveGen = hiveGen;
 	}
 
-	public static void initHiveData()
-	{
-
-//		//TODO Fix this
-//		MOON.biomes.add(BiomeDictionary.Type.HOT);
-//		MOON.biomes.add(BiomeDictionary.Type.COLD);
-//		MOON.biomes.add(BiomeDictionary.Type.WET);
-//		MOON.biomes.add(BiomeDictionary.Type.DRY);
-//		MOON.biomes.add(BiomeDictionary.Type.SAVANNA);
-//		MOON.biomes.add(BiomeDictionary.Type.CONIFEROUS);
-//		MOON.biomes.add(BiomeDictionary.Type.JUNGLE);
-//		MOON.biomes.add(BiomeDictionary.Type.SPOOKY);
-//		MOON.biomes.add(BiomeDictionary.Type.DEAD);
-//		MOON.biomes.add(BiomeDictionary.Type.LUSH);
-//		MOON.biomes.add(BiomeDictionary.Type.NETHER);
-//		MOON.biomes.add(BiomeDictionary.Type.END);
-//		MOON.biomes.add(BiomeDictionary.Type.MUSHROOM);
-//		MOON.biomes.add(BiomeDictionary.Type.MAGICAL);
-//		MOON.biomes.add(BiomeDictionary.Type.OCEAN);
-//		MOON.biomes.add(BiomeDictionary.Type.RIVER);
-//		MOON.biomes.add(BiomeDictionary.Type.WATER);
-//		MOON.biomes.add(BiomeDictionary.Type.MESA);
-//		MOON.biomes.add(BiomeDictionary.Type.FOREST);
-//		MOON.biomes.add(BiomeDictionary.Type.PLAINS);
-//		MOON.biomes.add(BiomeDictionary.Type.HILLS);
-//		MOON.biomes.add(BiomeDictionary.Type.SWAMP);
-//		MOON.biomes.add(BiomeDictionary.Type.SANDY);
-//		MOON.biomes.add(BiomeDictionary.Type.SNOWY);
-//		MOON.biomes.add(BiomeDictionary.Type.WASTELAND);
-//		MOON.biomes.add(BiomeDictionary.Type.BEACH);
+	public static void initHiveData() {
 
 	}
 
 	@Override
-	public IHiveGen getHiveGen()
-	{
+	public IHiveGen getHiveGen() {
 		return hiveGen;
 	}
 
 	@Override
-	public Block getBlock()
-	{
+	public Block getBlock() {
 		return Config.hive;
 	}
 
 	@Override
-	public int getMeta()
-	{
+	public int getMeta() {
 		return hiveType.ordinal();
 	}
 
 	@Override
-	public boolean isGoodBiome(BiomeGenBase biome)
-	{
+	public boolean isGoodBiome(BiomeGenBase biome) {
 		BiomeDictionary.Type[] types = BiomeDictionary.getTypesForBiome(biome);
-		for (BiomeDictionary.Type type : types)
-		{
-			if (biomes.contains(type))
-			{
+		for (BiomeDictionary.Type type : types) {
+			if (biomes.contains(type)) {
 				return true;
 			}
 		}
@@ -138,29 +102,26 @@ public enum HiveDescription implements IHiveDescription {
 	}
 
 	@Override
-	public boolean isGoodHumidity(EnumHumidity humidity)
-	{
+	public boolean isGoodHumidity(EnumHumidity humidity) {
 		return true;
 	}
 
 	@Override
-	public boolean isGoodTemperature(EnumTemperature temperature)
-	{
+	public boolean isGoodTemperature(EnumTemperature temperature) {
 		return true;
 	}
 
 	@Override
-	public float getGenChance()
-	{
+	public float getGenChance() {
 		return genChance;
 	}
 
 	@Override
-	public void postGen(World world, int x, int y, int z)
-	{
-		if (logSpawns)
-		{
-			LogHelper.info("Spawned " + this.toString().toLowerCase(Locale.ENGLISH) + " hive at: X " + x + ", Y: " + y + ", Z: " + z);
+	public void postGen(World world, int x, int y, int z) {
+		if (logSpawns) {
+			LogHelper.info("Spawned "
+					+ this.toString().toLowerCase(Locale.ENGLISH)
+					+ " hive at: X " + x + ", Y: " + y + ", Z: " + z);
 		}
 	}
 }

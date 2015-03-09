@@ -2,29 +2,20 @@ package spacebees.item.types;
 
 import spacebees.main.utils.LocalizationManager;
 
-public enum PropolisType
-{
-	UNSTABLE("unstable", 0xEFB492),
-	
-	AIR("air", 0xA19E10),
-	FIRE("fire", 0x95132F),
-	WATER("water", 0x1054A1),
-	EARTH("earth", 0x00a000),
-	ORDER("dull", 0xDDDDFF),
-	CHAOS("magic", 0x555577),
-	;
-	
-	private PropolisType(String pName, int overlayColour)
-	{
+public enum PropolisType {
+//	SPACE("space", 0x2222FF), ;
+	MOON("moon", 0x2222FF),
+	MARS("mars", 0xFF2222), ;
+
+	private PropolisType(String pName, int overlayColour) {
 		this.name = pName;
 		this.colour = overlayColour;
 	}
-	
+
 	private String name;
 	public int colour;
-	
-	public String getName()
-	{
+
+	public String getName() {
 		return LocalizationManager.getLocalizedString("propolis." + this.name);
 	}
 }

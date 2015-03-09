@@ -63,7 +63,11 @@ public class ItemMiscResources extends Item
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconFromDamage(int meta)
 	{
-		return icons[meta];
+		//TODO Fix this workaround
+		if(meta < 1)
+			return icons[meta];
+		else
+			return icons[0];
 	}
 
 	@Override

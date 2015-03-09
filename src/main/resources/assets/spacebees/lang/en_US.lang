@@ -10,13 +10,12 @@ tile.hive.moon.name=Moon Hive
 tile.hive.mars.name=Mars Hive
 
 #Combs
+comb.mundane=Mundane Comb
 comb.moon=Moon Comb
 comb.mars=Mars Comb
 
 #Waxes
-wax.magic=Magic Wax
-wax.soul=Soulful Wax
-wax.amnesic=Amnesic Wax
+wax.space=Space Wax
 
 #Drops
 drop.enchanting=Enchanting Drop
@@ -42,37 +41,10 @@ nugget.emerald=Emerald Shard
 nugget.apatite=Apatite Shard
 
 #Propolises
-propolis.dull=Ordered Propolis
-propolis.air=Breezey Propolis
-propolis.fire=Burning Propolis
-propolis.water=Flowing Propolis
-propolis.earth=Stony Propolis
-propolis.magic=Chaotic Propolis
-propolis.unstable=Unstable Propolis
+propolis.moon=Lunar Propolis
+propolis.mars=Martian Propolis
 
 #Misc resources
-resource.fragment=Lore Fragment
-resource.lump=Aromatic Lump
-resource.fertilizer=Concentrated Compound
-resource.skullChip=Wither Skeleton Bone Chip
-resource.skullFragment=Wither Skeleton Skull Fragment
-resource.dragonDust=Draconic Dust
-resource.dragonChunk=Draconic Chunk
-resource.essenceLife=Essence of False Life
-resource.essenceDeath=Essence of a Shallow Grave
-resource.essenceTime=Essence of Lost Time
-resource.essenceDurability=Essence of Everlasting Durability
-resource.essenceOblivion=Essence of Scornful Oblivion
-resource.essenceMutable=Essence of Fickle Permanence
-resource.TCairDust=Air Infused Dust
-resource.TCfireDust=Fire Infused Dust
-resource.TCwaterDust=Water Infused Dust
-resource.TCearthDust=Earth Infused Dust
-resource.TCorderDust=Order Infused Dust
-resource.TCchaosDust=Chaos Infused Dust
-resource.dimensionalSingularity=Dimensional Singularity
-resource.startNode=Bees and Magic
-resource.crystalAspect=Crystalized %s Aspect
 
 #Frames
 item.frameSpace.name=Space Frame
@@ -84,7 +56,7 @@ item.frameTemporal.name=Temporal Frame
 item.frameOblivion.name=Oblivion Frame
 
 #Capsules
-capsule.magic=%s Magic Capsule
+capsule.space=%s Space Capsule
 capsule.void=%s Void Capsule
 
 #Liquids
@@ -145,8 +117,8 @@ spacebees.speciesSatellite.description=MARS2!!!!
 spacebees.speciesTerra=Terra
 spacebees.speciesTerra.description=MARS3!!!!
 
-flowerProvider.book=Books
-flowerProvider.magic=Thaumic Flowers
-flowerProvider.arsmagica=Exotic Flowers
-flowerProvider.node=Node
+#flowerProvider.book=Books
+#flowerProvider.magic=Thaumic Flowers
+#flowerProvider.arsmagica=Exotic Flowers
+#flowerProvider.node=Node
 

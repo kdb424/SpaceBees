@@ -5,17 +5,16 @@ import spacebees.main.Config;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class TabSpaceBees extends CreativeTabs
-{
+public class TabSpaceBees extends CreativeTabs {
 	public static TabSpaceBees tabSpaceBees = new TabSpaceBees();
 
-	public TabSpaceBees()
-	{
+	public TabSpaceBees() {
 		super(getNextID(), "spaceBees");
 	}
 
-	public Item getTabIconItem()
-	{
-		return Config.miscResources.getStackForType(ResourceType.RESEARCH_BEEINFUSION).getItem();
+	public Item getTabIconItem() {
+		 return
+		 Config.miscResources.getStackForType(ResourceType.SPACE_BEES).getItem();
+
 	}
 }

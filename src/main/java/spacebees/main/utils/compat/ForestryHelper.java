@@ -59,9 +59,9 @@ public class ForestryHelper
 	public enum Propolis
 	{
 		NORMAL,
-		STICKY, // Unused.
-		PULSATING,
-		SILKY,;
+		MOON,
+		MARS,
+		;
 	}
 
 	public enum Pollen
