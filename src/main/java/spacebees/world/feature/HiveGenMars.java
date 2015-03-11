@@ -15,7 +15,7 @@ public class HiveGenMars
     {
         if (this.hiveGenerator == null)
         {
-			  this.hiveGenerator = new WorldGenHives(HiveDescription.MARS.getBlock());//
+			  this.hiveGenerator = new WorldGenHives(HiveDescription.MARS.getBlock());
         }
 
         if (event.worldObj.provider instanceof WorldProviderMars)
@@ -35,11 +35,11 @@ public class HiveGenMars
 	                x = event.chunkX + event.rand.nextInt(16) + 8;
 	                y = event.rand.nextInt(100);
 	                z = event.chunkZ + event.rand.nextInt(16) + 8;
-	                // These variables seem backwards. This causes it to make sure it's handing underground.
+	                // These variables seem backwards. This causes it to make sure it's hanging underground.
 	                blockAbove = y++; 
 	                blockBelow = y--;
 	                if(event.worldObj.isAirBlock(x, blockBelow, z)){
-	                	//Floating Do not place
+	                	//On Ground Do not place
 	                }
 	                else
 	                {
@@ -51,11 +51,6 @@ public class HiveGenMars
 	                	}
 	                }
             	}
-                	
-                	
-                
-//                this.hiveGenerator.generate(event.worldObj, event.rand, x, y, z);
-//                (new WorldGenMinable(HiveDescription.MARS.getBlock(), 0)).generate(event.worldObj, event.rand, x, y, z);
             }
         }
     }

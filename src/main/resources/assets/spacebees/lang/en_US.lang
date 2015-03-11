@@ -8,11 +8,13 @@ item.moonDial.name=Jade Moon Dial
 #Tiles
 tile.hive.moon.name=Moon Hive
 tile.hive.mars.name=Mars Hive
+tile.hive.asteroid.name=Asteroid Hive
 
 #Combs
 comb.mundane=Mundane Comb
 comb.moon=Moon Comb
 comb.mars=Mars Comb
+comb.asteroid=Asteroid Comb
 
 #Waxes
 wax.space=Space Wax
@@ -43,17 +45,15 @@ nugget.apatite=Apatite Shard
 #Propolises
 propolis.moon=Lunar Propolis
 propolis.mars=Martian Propolis
+propolis.asteroid=Asteroid Propolis
 
 #Misc resources
 
 #Frames
-item.frameSpace.name=Space Frame
-item.frameResilient.name=Resilient Frame
-item.frameGentle.name=Gentle Frame
-item.frameMetabolic.name=Metabolic Frame
-item.frameNecrotic.name=Necrotic Frame
-item.frameTemporal.name=Temporal Frame
-item.frameOblivion.name=Oblivion Frame
+item.frameCheese.name=Cheese Frame
+item.frameSludge.name=Sludge Frame
+item.frameBlackHole.name=Black Hole Frame
+item.frameCeres.name=Ceres Frame
 
 #Capsules
 capsule.space=%s Space Capsule
@@ -95,11 +95,6 @@ backpack.thaumaturge=Thaumaturge's Backpack
 #Itemgroups
 itemGroup.spaceBees=Space Bees
 
-#Misc
-misc.level=Level %s
-misc.magnetActive=%s - Active
-misc.magnetInactive=%s - Inactive
-
 #Species
 classification.moon=Moon
 spacebees.speciesMoon=Moon
@@ -116,6 +111,14 @@ spacebees.speciesSatellite=Satellite
 spacebees.speciesSatellite.description=MARS2!!!!
 spacebees.speciesTerra=Terra
 spacebees.speciesTerra.description=MARS3!!!!
+
+classification.asteroid=Asteroid
+spacebees.speciesAsteroid=Asteroid
+spacebees.speciesAsteroid.description=ASTEROID!!!!
+spacebees.speciesTerrene=Terrene
+spacebees.speciesTerrene.description=ASTEROID2!!!!
+spacebees.speciesPlanetoid=Planetoid
+spacebees.speciesPlanetoid.description=ASTEROID3!!!!
 
 #flowerProvider.book=Books
 #flowerProvider.magic=Thaumic Flowers

@@ -3,16 +3,20 @@ package spacebees.item.types;
 import spacebees.main.utils.LocalizationManager;
 
 public enum CombType {
-	MUNDANE("mundane", true), MOON("moon", true), MARS("mars", true),
+		//Name,   Show in creative
+	BLANK("blank", false), 
+	MOON("moon", true),
+	MARS("mars", true),
+	ASTEROID("asteroid", true),
 
 	;
 
 	private static int[][] colours = new int[][] {
-			// TODO Learn what this does
-			{ 0xCCCCCC, 0xE6E6E6 }, // Mundane
-			{ 0xCCCCCC, 0xE6E6E6 }, // Mundane Once registered remove
-			{ 0x993333, 0x1E160E }, // Moon
-			{ 0x9872FF, 0x1E160E }, // Mars
+			// TODO Color combs
+			{ 0xCCCCCC, 0xE6E6E6 }, // Blank. USed for debug
+			{ 0xCCCCCC, 0xE6E6E6 }, // Moon
+			{ 0x993333, 0x1E160E }, // Mars
+			{ 0x0000CC, 0x1E160E }, // Asteroid
 
 	};
 

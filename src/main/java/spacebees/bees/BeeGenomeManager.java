@@ -18,7 +18,6 @@ import forestry.api.genetics.IAllele;
 public class BeeGenomeManager
 {
 	// Basic genome for All spacebees.
-	// TODO Properly configure
 	private static IAllele[] getTemplateModBase()
 	{
 		IAllele[] genome = new IAllele[EnumBeeChromosome.values().length];
@@ -40,12 +39,22 @@ public class BeeGenomeManager
 		return genome;
 	}
 	
+	//TODO Configure Bee Genes
 	public static IAllele[] getTemplateBaseMoon()
 	{
 		IAllele[] genome = getTemplateModBase();
 		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
 		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");
+		
+		return genome;
+	}
+	
+	public static IAllele[] getTemplateMoon()
+	{
+		IAllele[] genome = getTemplateModBase();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
 		
 		return genome;
 	}
@@ -63,7 +72,7 @@ public class BeeGenomeManager
 	}
 	public static IAllele[] getTemplateCore()
 	{
-		IAllele[] genome = getTemplateBaseMoon();
+		IAllele[] genome = getTemplateLunation();
 		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.CORE;
 		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth1");
@@ -97,18 +106,36 @@ public class BeeGenomeManager
 		return genome;
 	}
 
-	public static IAllele[] addRainResist(IAllele[] genome)
-	{
-		genome[EnumBeeChromosome.TOLERANT_FLYER.ordinal()] = Allele.getBaseAllele("boolTrue");
-		
-		return genome;
-	}
-	
-	public static IAllele[] getTemplateMoon()
+	public static IAllele[] getTemplateAsteroid()
 	{
 		IAllele[] genome = getTemplateModBase();
 		
-		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.ASTEROID;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");		
+		return genome;
+	}
+	public static IAllele[] getTemplateTerrene()
+	{
+		IAllele[] genome = getTemplateAsteroid();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.TERRENE;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
+		return genome;
+	}
+	public static IAllele[] getTemplatePlanetoid()
+	{
+		IAllele[] genome = getTemplateTerrene();
+		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.PLANETOID;
+		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth2");		
+		return genome;
+	}
+	
+	
+	
+	public static IAllele[] addRainResist(IAllele[] genome)
+	{
+		genome[EnumBeeChromosome.TOLERANT_FLYER.ordinal()] = Allele.getBaseAllele("boolTrue");
 		
 		return genome;
 	}

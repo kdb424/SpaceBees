@@ -15,7 +15,10 @@ public enum BeeClassification implements IClassification
 	CORE("Core", "Core"),
 	MARS("Mars", "March"),
 	SATELLITE("Satellite", "Satellite"),
-	TERRA("Terra", "Terra")
+	TERRA("Terra", "Terra"),
+	ASTEROID("Asteroid", "Asteroidem"),
+	TERRENE("Terrene", "Terrenis"),
+	PLANETOID("Planetoid", "Planetoid")
 	;
 	
 	private String uID;

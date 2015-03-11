@@ -48,11 +48,13 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 //	BeeClasification
 //	BeeGenomeManager
 //	CombType
+//	CraftingManager
 //	If Hive Bee
 //	HiveType
 //	HiveDescription
 	
 	//TODO Fix colors
+	//TODO Configure Bees
 	MOON("Moon", "Luna",
 			BeeClassification.MOON, 0xFFFFFF, 0xFFFFFF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
 	LUNATION("Lunation", "Lunationis",
@@ -65,6 +67,12 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 			BeeClassification.SATELLITE, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
 	TERRA("Terra", "Terra",
 			BeeClassification.TERRA, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	ASTEROID("Asteroid", "Asteroidem",
+			BeeClassification.ASTEROID, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	TERRENE("Terrene", "Terrenis",
+			BeeClassification.TERRENE, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+	PLANETOID("Planetoid", "Planetoid",
+			BeeClassification.PLANETOID, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
 	;
 	
 	public static void setupBeeSpecies()
@@ -87,8 +95,19 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 		SATELLITE.addProduct(Config.combs.getStackForType(CombType.MARS), 15)
 		.setGenome(BeeGenomeManager.getTemplateSatellite())
 		.register();
+		//TODO Add custom comb/drop
 		TERRA.addProduct(Config.combs.getStackForType(CombType.MARS), 15)
 		.setGenome(BeeGenomeManager.getTemplateTerra())
+		.register();
+		ASTEROID.addProduct(Config.combs.getStackForType(CombType.ASTEROID), 15)
+		.setGenome(BeeGenomeManager.getTemplateAsteroid())
+		.register();
+		TERRENE.addProduct(Config.combs.getStackForType(CombType.ASTEROID), 15)
+		.setGenome(BeeGenomeManager.getTemplateTerrene())
+		.register();
+		//TODO Add custom comb/drop
+		PLANETOID.addProduct(Config.combs.getStackForType(CombType.ASTEROID), 15)
+		.setGenome(BeeGenomeManager.getTemplatePlanetoid())
 		.register();
 
 	}

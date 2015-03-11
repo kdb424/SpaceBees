@@ -64,6 +64,7 @@ public class ItemMiscResources extends Item
 	public IIcon getIconFromDamage(int meta)
 	{
 		//TODO Fix this workaround
+		// Causes errors because meta < 1. Only visible error with NEI installed
 		if(meta < 1)
 			return icons[meta];
 		else

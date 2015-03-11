@@ -22,8 +22,7 @@ public class HiveGenMoon
         {
             int hivesPerChunk = 2;
             int x;
-            int y;
-            y = 0;
+            int y = 0;
             int z;
             int metadata = 0; //Sets hive type 0 Moon
             int blockAbove;
