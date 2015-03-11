@@ -31,7 +31,6 @@ public class HiveGenAsteroids
 
             for (int hiveCount = 0; hiveCount < hivesPerChunk; ++hiveCount)
             {
-            	System.out.println("Doing stuff");
 	            x = event.chunkX + event.rand.nextInt(16) + 8;
 	            z = event.chunkZ + event.rand.nextInt(16) + 8;
 	            // These variables seem backwards. This causes it to make sure it's on the ground.
@@ -39,7 +38,6 @@ public class HiveGenAsteroids
 	            blockBelow = y++;
 	            if(event.worldObj.isAirBlock(x, blockBelow, z)){
 	            	//Floating Do not place
-	            	System.out.println("Never gonna happen");
 	            }
 	            else
 	            {
@@ -49,8 +47,6 @@ public class HiveGenAsteroids
 	            		event.worldObj.setBlock(x, y, z, HiveDescription.ASTEROID.getBlock(), metadata, 2);
 	            		System.out.println("Hive at x " + x + " z " + z + " y " + y);
 	            	}
-	            	else
-	            		System.out.println("Failed hive at x " + x + " z " + z + " y " + y);
 	            }
                 	
             }

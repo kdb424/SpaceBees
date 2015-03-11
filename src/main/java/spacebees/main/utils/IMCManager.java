@@ -58,6 +58,5 @@ public class IMCManager
 //		{
 //			throw new Exception("Required tag 'source' was either empty, or not a valid ItemStack.");
 //		}
-		System.out.println("kdb424 broke it");
 	}
 }

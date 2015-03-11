@@ -81,8 +81,7 @@ public class SpaceBees
 		CraftingManager.registerLiquidContainers();
 
 		VersionInfo.doVersionCheck();
-		net.minecraftforge.common.BiomeDictionary.registerAllBiomes();
-		System.out.println(net.minecraftforge.common.BiomeDictionary.isBiomeRegistered(102));
+//		net.minecraftforge.common.BiomeDictionary.registerAllBiomes();
 		LogHelper.info("Postinit completed");
 	}
 
