@@ -1,15 +1,5 @@
 package spacebees.main;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import spacebees.bees.BeeManager;
 import spacebees.main.utils.CraftingManager;
@@ -17,8 +7,16 @@ import spacebees.main.utils.IMCManager;
 import spacebees.main.utils.LogHelper;
 import spacebees.main.utils.VersionInfo;
 import spacebees.main.utils.compat.ModHelper;
+import spacebees.world.feature.HiveGenAsteroids;
 import spacebees.world.feature.HiveGenMars;
 import spacebees.world.feature.HiveGenMoon;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(
 		modid = VersionInfo.ModName,
@@ -62,6 +60,7 @@ public class SpaceBees
 		
 		MinecraftForge.EVENT_BUS.register(new HiveGenMoon());
 		MinecraftForge.EVENT_BUS.register(new HiveGenMars());
+		MinecraftForge.EVENT_BUS.register(new HiveGenAsteroids());
 
 		LogHelper.info("Init completed");
 	}

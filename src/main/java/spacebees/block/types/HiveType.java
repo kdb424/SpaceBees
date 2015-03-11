@@ -25,7 +25,8 @@ public enum HiveType
 {
 	//TODO Learn what numbers do
 	MOON("moon", 12, true),
-	MARS("mars", 12, true)
+	MARS("mars", 12, true),
+	ASTEROID("asteroid", 12, true)
 	;
 	
 	private static String[] nameList;
@@ -52,7 +53,7 @@ public enum HiveType
 	
 	public static void initHiveData()
 	{
-		ItemStack[] combs = new ItemStack[] { Config.combs.getStackForType(CombType.MUNDANE) };
+		ItemStack[] combs = new ItemStack[] { Config.combs.getStackForType(CombType.MOON) };
 		HiveDrop valiantDrop = new HiveDrop(BeeGenomeManager.addRainResist(ForestryHelper.getTemplateForestryForSpecies("Valiant")), combs, 5);
 
 //
@@ -64,10 +65,9 @@ public enum HiveType
 		MOON.drops.add(new HiveDrop(BeeSpecies.MOON.getGenome(), combs, 80).setIgnoblePercentage(0.65f));
 		combs = new ItemStack[] { Config.combs.getStackForType(CombType.MARS) };
 		MARS.drops.add(new HiveDrop(BeeSpecies.MARS.getGenome(), combs, 80).setIgnoblePercentage(0.65f));
-//		MOON.drops.add(new HiveDrop(BeeSpecies.LUNATION.getGenome(), combs, 80).setIgnoblePercentage(0.85f));
-//		DEEP.drops.add(new HiveDrop(BeeGenomeManager.addRainResist(BeeSpecies.ATTUNED.getGenome()), combs, 20));
-//		MOON.drops.add(valiantDrop);
-//
+		combs = new ItemStack[] { Config.combs.getStackForType(CombType.ASTEROID) };
+		ASTEROID.drops.add(new HiveDrop(BeeSpecies.ASTEROID.getGenome(), combs, 80).setIgnoblePercentage(0.65f));
+
 
 	}
 	

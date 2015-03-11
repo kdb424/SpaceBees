@@ -10,7 +10,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import spacebees.block.*;
 import spacebees.block.types.HiveType;
-import spacebees.item.ItemCapsule;
+//import spacebees.item.ItemCapsule;
 import spacebees.item.ItemComb;
 import spacebees.item.ItemDrop;
 import spacebees.item.ItemSpaceHive;
@@ -73,17 +73,15 @@ public class Config {
 	public static ItemMoonDial moonDial;
 
 	// ----- Liquid Capsules --------------------
-	public static ItemCapsule spaceCapsule;
-	public static ItemCapsule voidCapsule;
+	//TODO Fix these and re-enable
+//	public static ItemCapsule spaceCapsule;
+//	public static ItemCapsule voidCapsule;
 
 	// ----- Apiary Frames ----------------------
-	public static ItemSpaceHiveFrame hiveFrameSpace;
-	public static ItemSpaceHiveFrame hiveFrameResilient;
-	public static ItemSpaceHiveFrame hiveFrameGentle;
-	public static ItemSpaceHiveFrame hiveFrameMetabolic;
-	public static ItemSpaceHiveFrame hiveFrameNecrotic;
-	public static ItemSpaceHiveFrame hiveFrameTemporal;
-	public static ItemSpaceHiveFrame hiveFrameOblivion;
+	public static ItemSpaceHiveFrame hiveFrameMoon;
+	public static ItemSpaceHiveFrame hiveFrameMars;
+	public static ItemSpaceHiveFrame hiveFrameAsteroid;
+	public static ItemSpaceHiveFrame hiveFrameBlackhole;
 
 	// ----- Backpacks ------------------------------------------
 	public static Item thaumaturgeBackpackT1;
@@ -137,8 +135,8 @@ public class Config {
 			hive.setHarvestLevel("scoop", 0, t.ordinal());
 		}
 
-		LogHelper
-				.info("Replacing stupid-block with 'Here,  have some delicious textures' ItemBlock. This is 100%% normal.");
+//		LogHelper
+//				.info("Replacing stupid-block with 'Here,  have some delicious textures' ItemBlock. This is 100%% normal.");
 		/*
 		 * Item.itemsList[hive.blockID] = null; Item.itemsList[hive.blockID] =
 		 * new ItemMultiTextureTile(hive.blockID - 256, hive,
@@ -157,24 +155,23 @@ public class Config {
 //		BeeManager.inducers.put(
 //				miscResources.getStackForType(ResourceType.AROMATIC_LUMP), 95);
 
-		spaceCapsule = new ItemCapsule(CapsuleType.SPACE, capsuleStackSizeMax);
-		voidCapsule = new ItemCapsule(CapsuleType.VOID, capsuleStackSizeMax);
+		//TODO Fix these and re-enable
+//		spaceCapsule = new ItemCapsule(CapsuleType.SPACE, capsuleStackSizeMax);
+//		voidCapsule = new ItemCapsule(CapsuleType.VOID, capsuleStackSizeMax);
 		pollen = new ItemPollen();
 
-		hiveFrameSpace = new ItemSpaceHiveFrame(HiveFrameType.Space);
-		hiveFrameResilient = new ItemSpaceHiveFrame(HiveFrameType.RESILIENT);
-		hiveFrameGentle = new ItemSpaceHiveFrame(HiveFrameType.GENTLE);
-		hiveFrameMetabolic = new ItemSpaceHiveFrame(HiveFrameType.METABOLIC);
-		hiveFrameNecrotic = new ItemSpaceHiveFrame(HiveFrameType.NECROTIC);
-		hiveFrameTemporal = new ItemSpaceHiveFrame(HiveFrameType.TEMPORAL);
-		hiveFrameOblivion = new ItemSpaceHiveFrame(HiveFrameType.OBLIVION);
+		hiveFrameMoon = new ItemSpaceHiveFrame(HiveFrameType.MOON);
+		hiveFrameMars = new ItemSpaceHiveFrame(HiveFrameType.MARS);
+		hiveFrameAsteroid = new ItemSpaceHiveFrame(HiveFrameType.ASTEROID);
+		hiveFrameBlackhole = new ItemSpaceHiveFrame(HiveFrameType.BLACKHOLE);
 
-		ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CORRIDOR,
-				new WeightedRandomChestContent(
-						new ItemStack(hiveFrameOblivion), 1, 1, 18));
-		ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_LIBRARY,
-				new WeightedRandomChestContent(
-						new ItemStack(hiveFrameOblivion), 1, 3, 23));
+
+//		ChestGenHooks.addItem(ChestGenHooks.PYRAMID_DESERT_CHEST,
+//				new WeightedRandomChestContent(
+//						new ItemStack(hiveFrameSpace), 1, 1, 18));
+//		ChestGenHooks.addItem(ChestGenHooks.PYRAMID_JUNGLE_CHEST,
+//				new WeightedRandomChestContent(
+//						new ItemStack(hiveFrameSpace), 1, 3, 23));
 
 //		moonDial = new ItemMoonDial();
 
@@ -247,16 +244,16 @@ public class Config {
 		disableUpdateNotification = p.getBoolean(false);
 
 		p = configuration.get("general", "useImpregnatedStickInTools", false);
-		p.comment = "Set to true to make Thaumium Grafter & Scoop require impregnated sticks in the recipe.";
+		p.comment = "Set to true to make Space Frames require impregnated sticks in the recipe.";
 		useImpregnatedStickInTools = p.getBoolean(false);
 
 		p = configuration.get("general", "moonDialShowText", false);
 		p.comment = "set to true to show the current moon phase in mouse-over text.";
 		moonDialShowsPhaseInText = p.getBoolean(false);
 
-		p = configuration.get("general", "doSpecialHiveGen", true);
-		p.comment = "Set to false if you hate fun and do not want special hives generating in Magic biomes.";
-		doSpecialHiveGen = p.getBoolean(true);
+//		p = configuration.get("general", "doSpecialHiveGen", true);
+//		p.comment = "Set to false if you hate fun and do not want special hives generating in Magic biomes.";
+//		doSpecialHiveGen = p.getBoolean(true);
 
 		// Debug
 		p = configuration.get("debug", "logHiveSpawns", false);

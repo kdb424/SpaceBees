@@ -32,7 +32,7 @@ public class BeeMutation implements IBeeMutation
 		
 		// Forestry + These -> Common
 		
-		BeeSpecies[] spaceMundane = new BeeSpecies[] { BeeSpecies.MOON };
+		BeeSpecies[] spaceMundane = new BeeSpecies[] { BeeSpecies.MOON, BeeSpecies.MARS, BeeSpecies.ASTEROID };
 		String[] forestryMundane = new String[] { "Forest", "Meadows", "Modest", "Wintry", "Tropical", "Marshy" };
 		String[] binnieMundane = new String[] { "marble", "rock", "water", "basalt" };
 		
@@ -57,12 +57,6 @@ public class BeeMutation implements IBeeMutation
 					}
 				}
 			}
-//			new BeeMutation(species, Allele.getBaseSpecies("Common"), ForestryHelper.getTemplateForestryForSpecies("Cultivated"), 12);
-//			Base bee 1 + base bee 2 = mutated bee
-//			new BeeMutation(species, Allele.getBaseSpecies("Cultivated"), BeeSpecies.ELDRITCH, 12);
-//			new BeeMutation(Allele.getBaseSpecies("Forest"), BeeSpecies.MOON, BeeSpecies.LUNATION, 8);
-//			new BeeMutation(BeeSpecies.MOON, BeeSpecies.MOON, BeeSpecies.LUNATION, 12);
-//			new BeeMutation(species, Allele.getBaseSpecies("Cultivated"), BeeSpecies.LUNATION, 12);
 			//TODO Set proper mutation rates not for testing
 			new BeeMutation(Allele.getBaseSpecies("Imperial"), BeeSpecies.MOON, BeeSpecies.LUNATION, 100);
 			new BeeMutation(BeeSpecies.MOON, BeeSpecies.LUNATION, BeeSpecies.CORE, 100);

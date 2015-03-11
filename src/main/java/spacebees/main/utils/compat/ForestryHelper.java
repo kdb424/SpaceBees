@@ -104,6 +104,7 @@ public class ForestryHelper
 
 		registerHive(hiveRegistry, HiveDescription.MOON);
 		registerHive(hiveRegistry, HiveDescription.MARS);
+		registerHive(hiveRegistry, HiveDescription.ASTEROID);
 //		registerHive(hiveRegistry, HiveDescription.RESONANT);
 //		registerHive(hiveRegistry, HiveDescription.DEEP);
 //		registerHive(hiveRegistry, HiveDescription.INFERNAL);

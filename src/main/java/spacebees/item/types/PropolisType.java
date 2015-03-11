@@ -4,8 +4,9 @@ import spacebees.main.utils.LocalizationManager;
 
 public enum PropolisType {
 //	SPACE("space", 0x2222FF), ;
-	MOON("moon", 0x2222FF),
-	MARS("mars", 0xFF2222), ;
+	MOON("moon", 0xE6E6E6),
+	MARS("mars", 0xFF2222),
+	ASTEROID("asteroid", 0x0000CC), ;
 
 	private PropolisType(String pName, int overlayColour) {
 		this.name = pName;

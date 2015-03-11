@@ -1,18 +1,20 @@
 package spacebees.main.utils;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import spacebees.item.ItemCapsule;
+//import spacebees.item.ItemCapsule;
 import spacebees.item.types.CombType;
 import spacebees.item.types.DropType;
-import spacebees.item.types.FluidType;
+//import spacebees.item.types.FluidType;
 import spacebees.item.types.NuggetType;
 import spacebees.item.types.PollenType;
 import spacebees.item.types.PropolisType;
 import spacebees.item.types.WaxType;
 import spacebees.main.Config;
 import spacebees.main.utils.compat.ForestryHelper;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -23,26 +25,43 @@ import forestry.api.recipes.RecipeManagers;
 
 public class CraftingManager {
 	public static void registerLiquidContainers() {
-		registerLiquidContainer(Config.spaceCapsule);
-		registerLiquidContainer(Config.voidCapsule);
+		//TODO Fix these and re-enable
+//		registerLiquidContainer(Config.spaceCapsule);
+//		registerLiquidContainer(Config.voidCapsule);
 	}
 
 	public static void setupCrafting() {
-		// Broken up into seperate sections to make things a bit easier to find.
+		// Broken up into separate sections to make things a bit easier to find.
 		setupVanillaCrafting();
 		setupCentrifugeRecipes();
 		setupCarpenterRecipes();
 	}
 
 	private static void setupVanillaCrafting() {
-		ItemStack input;
-		ItemStack output;
+//		ItemStack input;
+//		ItemStack output;		
+		//TODO Give recipe
+		
+		ItemStack sludge = new ItemStack(micdoodle8.mods.galacticraft.planets.mars.items.MarsItems.bucketSludge);
+		sludge.stackSize = 1;
+		//TODO Use better sticks
+		ItemStack stick = new ItemStack(Items.stick);
+		GameRegistry.addRecipe(new ItemStack(Config.hiveFrameMars),
+				" s ",
+				"sbs",
+				" s ",
+		        'b', sludge, 's', stick);
+
 
 		// Space capsules
-		output = new ItemStack(Config.spaceCapsule);
-		output.stackSize = 4;
-		GameRegistry.addRecipe(new ShapedOreRecipe(output, new Object[] {
-				"WWW", 'W', "waxSpace" }));
+
+//		
+//		output = new ItemStack(Config.hiveFrameMoon);
+//		output.stackSize = 1;		
+//		output = new ItemStack(Config.spaceCapsule);
+//		output.stackSize = 4;
+//		GameRegistry.addRecipe(new ShapedOreRecipe(output, new Object[] {
+//				"WWW", 'W', "waxSpace" }));
 
 		// "bottling" Intellect drops
 //		GameRegistry.addRecipe(
@@ -107,18 +126,36 @@ public class CraftingManager {
 	}
 
 	private static void setupCentrifugeRecipes() {
-		ItemStack beeswax = ItemInterface.getItemStack("beeswax");
+//		ItemStack beeswax = ItemInterface.getItemStack("beeswax");
+		ItemStack beeswax = Config.wax.getStackForType(WaxType.SPACE);
 		ItemStack propolis = ItemInterface.getItemStack("propolis");
 		propolis.setItemDamage(ForestryHelper.Propolis.MOON.ordinal());
 
+		//TODO Add space drops
 		// 20 is the 'average' time to centrifuge a comb.
-//		RecipeManagers.centrifugeManager.addRecipe(
-//				20,
-//				Config.combs.getStackForType(CombType.MUNDANE),
-//				new ItemStack[] { beeswax,
-//						ItemInterface.getItemStack("honeyDrop"),
-//						Config.wax.getStackForType(WaxType.SPACE) }, new int[] {
-//						90, 60, 10 });
+		RecipeManagers.centrifugeManager.addRecipe(
+				20,
+				Config.combs.getStackForType(CombType.MOON),
+				new ItemStack[] { beeswax,
+						ItemInterface.getItemStack("honeyDrop"),
+						Config.propolis.getStackForType(PropolisType.MOON) }, new int[] {
+						// Chance to drop each item
+						//Honey, SpaceWax, Propolis
+						90, 60, 10 });
+		RecipeManagers.centrifugeManager.addRecipe(
+				20,
+				Config.combs.getStackForType(CombType.MARS),
+				new ItemStack[] { beeswax,
+						ItemInterface.getItemStack("honeyDrop"),
+						Config.propolis.getStackForType(PropolisType.MARS) }, new int[] {
+						90, 60, 10 });
+		RecipeManagers.centrifugeManager.addRecipe(
+				20,
+				Config.combs.getStackForType(CombType.ASTEROID),
+				new ItemStack[] { beeswax,
+						ItemInterface.getItemStack("honeyDrop"),
+						Config.propolis.getStackForType(PropolisType.ASTEROID) }, new int[] {
+						90, 60, 10 });
 
 	}
 
@@ -153,45 +190,45 @@ public class CraftingManager {
 
 	}
 
-	private static void registerLiquidContainer(ItemCapsule baseCapsule) {
-		ItemStack empty = new ItemStack(baseCapsule, 1, 0);
-		ItemStack filled;
-		FluidStack liquid = null;
-
-		for (FluidType fluidType : FluidType.values()) {
-			switch (fluidType) {
-			case EMPTY:
-				liquid = null;
-				break;
-			case WATER:
-				liquid = new FluidStack(FluidRegistry.WATER,
-						baseCapsule.getType().capacity);
-				break;
-			case LAVA:
-				liquid = new FluidStack(FluidRegistry.LAVA,
-						baseCapsule.getType().capacity);
-				break;
-			default:
-				liquid = FluidRegistry.getFluidStack(fluidType.liquidID,
-						baseCapsule.getType().capacity);
-				break;
-			}
-
-			if (liquid != null) {
-				filled = new ItemStack(baseCapsule, 1, fluidType.ordinal());
-				FluidContainerRegistry.registerFluidContainer(liquid, filled,
-						empty);
-
-				// Register with Squeezer/Bottler
-				// RecipeManagers.bottlerManager.addRecipe(5, liquid, empty,
-				// filled); Outdated?
-				RecipeManagers.squeezerManager.addRecipe(10,
-						new ItemStack[] { filled }, liquid,
-						Config.wax.getStackForType(WaxType.SPACE), 20);
-				fluidType.available = true;
-			}
-		}
-		// Empty will be set to unavailable. Obviously, it always is.
-		FluidType.EMPTY.available = true;
-	}
+//	private static void registerLiquidContainer(ItemCapsule baseCapsule) {
+//		ItemStack empty = new ItemStack(baseCapsule, 1, 0);
+//		ItemStack filled;
+//		FluidStack liquid = null;
+//
+//		for (FluidType fluidType : FluidType.values()) {
+//			switch (fluidType) {
+//			case EMPTY:
+//				liquid = null;
+//				break;
+//			case WATER:
+//				liquid = new FluidStack(FluidRegistry.WATER,
+//						baseCapsule.getType().capacity);
+//				break;
+//			case LAVA:
+//				liquid = new FluidStack(FluidRegistry.LAVA,
+//						baseCapsule.getType().capacity);
+//				break;
+//			default:
+//				liquid = FluidRegistry.getFluidStack(fluidType.liquidID,
+//						baseCapsule.getType().capacity);
+//				break;
+//			}
+//
+//			if (liquid != null) {
+//				filled = new ItemStack(baseCapsule, 1, fluidType.ordinal());
+//				FluidContainerRegistry.registerFluidContainer(liquid, filled,
+//						empty);
+//
+//				// Register with Squeezer/Bottler
+//				// RecipeManagers.bottlerManager.addRecipe(5, liquid, empty,
+//				// filled); Outdated?
+//				RecipeManagers.squeezerManager.addRecipe(10,
+//						new ItemStack[] { filled }, liquid,
+//						Config.wax.getStackForType(WaxType.SPACE), 20);
+//				fluidType.available = true;
+//			}
+//		}
+//		// Empty will be set to unavailable. Obviously, it always is.
+//		FluidType.EMPTY.available = true;
+//	}
 }

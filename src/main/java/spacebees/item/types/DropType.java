@@ -4,6 +4,7 @@ import spacebees.main.utils.LocalizationManager;
 
 public enum DropType
 {
+	//TODO Make galactic drops
 	ENCHANTED("enchanting", 0x6e1c6d, 0xff8fff),
 	INTELLECT("intellect", 0x25914D, 0x18E072),
 	DESTABILIZED("destabilized", 0xCC002C, 0x6B0118),
