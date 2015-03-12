@@ -57,11 +57,13 @@ public class BeeMutation implements IBeeMutation
 					}
 				}
 			}
-			//TODO Set proper mutation rates not for testing
-			new BeeMutation(Allele.getBaseSpecies("Imperial"), BeeSpecies.MOON, BeeSpecies.LUNATION, 100);
-			new BeeMutation(BeeSpecies.MOON, BeeSpecies.LUNATION, BeeSpecies.CORE, 100);
-			new BeeMutation(Allele.getBaseSpecies("Industrious"), BeeSpecies.MARS, BeeSpecies.SATELLITE, 100);
-			new BeeMutation(BeeSpecies.MARS, BeeSpecies.SATELLITE, BeeSpecies.TERRA, 100);
+			//TODO Test Mutation Rates
+			new BeeMutation(Allele.getBaseSpecies("Imperial"), BeeSpecies.MOON, BeeSpecies.LUNATION, 11);
+			new BeeMutation(BeeSpecies.MOON, BeeSpecies.LUNATION, BeeSpecies.CORE, 10);
+			new BeeMutation(Allele.getBaseSpecies("Industrious"), BeeSpecies.MARS, BeeSpecies.SATELLITE, 11);
+			new BeeMutation(BeeSpecies.MARS, BeeSpecies.SATELLITE, BeeSpecies.TERRA, 10);
+			new BeeMutation(BeeSpecies.CORE, BeeSpecies.ASTEROID, BeeSpecies.TERRENE, 8);
+			new BeeMutation(BeeSpecies.ASTEROID, BeeSpecies.TERRENE, BeeSpecies.PLANETOID, 5);
 		}
 		
 

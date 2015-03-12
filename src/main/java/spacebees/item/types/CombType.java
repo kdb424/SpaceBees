@@ -12,11 +12,10 @@ public enum CombType {
 	;
 
 	private static int[][] colours = new int[][] {
-			// TODO Color combs
-			{ 0xCCCCCC, 0xE6E6E6 }, // Blank. USed for debug
+			{ 0xCCCCCC, 0xE6E6E6 }, // Blank. Used for debug
 			{ 0xCCCCCC, 0xE6E6E6 }, // Moon
-			{ 0x993333, 0x1E160E }, // Mars
-			{ 0x0000CC, 0x1E160E }, // Asteroid
+			{ 0xFF0000, 0xFF2222 }, // Mars
+			{ 0x222222, 0x222299 }, // Asteroid
 
 	};
 

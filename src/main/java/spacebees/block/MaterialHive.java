@@ -8,6 +8,7 @@ public class MaterialHive extends Material
 
 	public MaterialHive()
 	{
+		//TODO Check this
 		super(MapColor.stoneColor);
 		this.setImmovableMobility();
 		this.setRequiresTool();

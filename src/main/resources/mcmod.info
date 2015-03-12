@@ -1,13 +1,13 @@
 [
 {
   "modid": "SpaceBees",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "0.1",
+  "mcversion": "1.7.10",
   "name": "Space Bees",
   "url": "",
   "description": "Space themed bee expansion for Forestry and Galacticraft",
   "authors": [ "kdb424" ],
-  "credits": "MysteriousAges SirSengir, Azanor, Binnie & the Forestry Dev peeps",
-  "logoFile": "/mods/spacebees/textures/logo.png"
+  "credits": "MysteriousAges, SirSengir, Azanor, Binnie & the Forestry Dev peeps",
+  "logoFile": "/assets/spacebees/textures/logo.png"
 }
 ]

@@ -2,13 +2,16 @@ package spacebees.item;
 
 import spacebees.block.types.HiveType;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
+import cpw.mods.fml.common.Optional;
 import forestry.core.items.ItemForestryBlock;
 
 /**
  * Created by Allen on 7/29/2014.
  */
+@Optional.Interface(iface="forestry.core.items.ItemForestryBlock", modid="forestry", striprefs=true)
 public class ItemSpaceHive extends ItemForestryBlock
 {
 	public ItemSpaceHive(Block block)

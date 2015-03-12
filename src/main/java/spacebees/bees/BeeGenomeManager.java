@@ -25,12 +25,13 @@ public class BeeGenomeManager
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
 		genome[EnumBeeChromosome.SPEED.ordinal()] = Allele.getBaseAllele("speedSlowest");
 		genome[EnumBeeChromosome.LIFESPAN.ordinal()] = Allele.getBaseAllele("lifespanShorter");
-		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
+		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityLow");
 		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceNone");
 		genome[EnumBeeChromosome.NOCTURNAL.ordinal()] = Allele.getBaseAllele("boolFalse");
 		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceNone");
 		genome[EnumBeeChromosome.TOLERANT_FLYER.ordinal()] = Allele.getBaseAllele("boolFalse");
 		genome[EnumBeeChromosome.CAVE_DWELLING.ordinal()] = Allele.getBaseAllele("boolFalse");
+		//TODO Different Flowers
 		genome[EnumBeeChromosome.FLOWER_PROVIDER.ordinal()] = Allele.getBaseAllele("flowersVanilla");
 		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringSlowest");
 		genome[EnumBeeChromosome.TERRITORY.ordinal()] = Allele.getBaseAllele("territoryDefault");
@@ -39,95 +40,67 @@ public class BeeGenomeManager
 		return genome;
 	}
 	
-	//TODO Configure Bee Genes
-	public static IAllele[] getTemplateBaseMoon()
-	{
-		IAllele[] genome = getTemplateModBase();
-		
-		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");
-		
-		return genome;
-	}
-	
+	//TODO Re-visit configuration when things are more finalized
 	public static IAllele[] getTemplateMoon()
 	{
 		IAllele[] genome = getTemplateModBase();
-		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MOON;
-		
 		return genome;
 	}
 	
 	public static IAllele[] getTemplateLunation()
 	{
-		IAllele[] genome = getTemplateBaseMoon();
-		
+		IAllele[] genome = getTemplateMoon();
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.LUNATION;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");
-		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
-		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringAverage");
-		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");
 		return genome;
 	}
 	public static IAllele[] getTemplateCore()
 	{
 		IAllele[] genome = getTemplateLunation();
-		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.CORE;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth1");
-		genome[EnumBeeChromosome.FERTILITY.ordinal()] = Allele.getBaseAllele("fertilityNormal");
-		genome[EnumBeeChromosome.FLOWERING.ordinal()] = Allele.getBaseAllele("floweringAverage");
-		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");
 		return genome;
 	}
 	public static IAllele[] getTemplateMars()
 	{
 		IAllele[] genome = getTemplateModBase();
-		
-		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MARS;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.MARS;		
 		return genome;
 	}
 	public static IAllele[] getTemplateSatellite()
 	{
 		IAllele[] genome = getTemplateMars();
-		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.SATELLITE;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");
 		return genome;
 	}
 	public static IAllele[] getTemplateTerra()
 	{
-		IAllele[] genome = getTemplateSatellite();
-		
+		IAllele[] genome = getTemplateSatellite();		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.TERRA;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth2");		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
 		return genome;
 	}
 
 	public static IAllele[] getTemplateAsteroid()
 	{
-		IAllele[] genome = getTemplateModBase();
-		
-		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.ASTEROID;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");		
+		IAllele[] genome = getTemplateModBase();		
+		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.ASTEROID;		
 		return genome;
 	}
 	public static IAllele[] getTemplateTerrene()
 	{
 		IAllele[] genome = getTemplateAsteroid();
-		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.TERRENE;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp1");		
 		return genome;
 	}
 	public static IAllele[] getTemplatePlanetoid()
 	{
-		IAllele[] genome = getTemplateTerrene();
-		
+		IAllele[] genome = getTemplateTerrene();		
 		genome[EnumBeeChromosome.SPECIES.ordinal()] = BeeSpecies.PLANETOID;
-		genome[EnumBeeChromosome.TEMPERATURE_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceBoth2");		
+		genome[EnumBeeChromosome.HUMIDITY_TOLERANCE.ordinal()] = Allele.getBaseAllele("toleranceUp2");		
 		return genome;
 	}
 	

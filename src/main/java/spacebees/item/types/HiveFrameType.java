@@ -35,8 +35,8 @@ public enum HiveFrameType
 			0f,		//Production
 			0.01f),	//Genetic Decay
 	//Detailed Call
-	//TODO Check what extra things do
-//	Space("Space", 	//Name
+	//Seems like the bool values aren't used.
+//	MOON("Test", 	//Name
 //			100,	//Damage
 //			1f,		//Territory
 //			1f,		//Mutation
@@ -45,17 +45,11 @@ public enum HiveFrameType
 //			1f,		//Flowering
 //			0.7f,	//Genetic Decay
 //			false,	//Sealed
-//			false,	//Lit
-//			false,	//Sunlit
-//			false	//Hellish
+//			true,	//Self Lit
+//			true,	//Sun Simulation
+//			true	//Hellish
 //			),	
 
-//	RESILIENT("Resilient", 800, 1f, 1f, 1f, 2f, 0.5f),
-//	GENTLE("Gentle", 200, 1f, 0.7f, 1.5f, 1.4f, 0.01f),
-//	METABOLIC("Metabolic", 130, 1f, 1.8f, 1f, 1.2f, 1f),
-//	NECROTIC("Necrotic", 280, 1f, 1f, 0.3f, 0.75f, 1.2f),
-//	TEMPORAL("Temporal", 300, 1f, 1f, 2.5f, 1f, 0.8f),
-//	OBLIVION("Oblivion", 50, 1f, 1f, 0.0001f, 0f, 1f),
 	;
 	
 	private HiveFrameType(String name, int damage,

@@ -53,26 +53,25 @@ public enum BeeSpecies implements IAlleleBeeSpecies, IIconProvider
 //	HiveType
 //	HiveDescription
 	
-	//TODO Fix colors
-	//TODO Configure Bees
+	//TODO Re-visit config after testing
 	MOON("Moon", "Luna",
-			BeeClassification.MOON, 0xFFFFFF, 0xFFFFFF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.MOON, 0xFFFFFF, 0xFFFFFF, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	LUNATION("Lunation", "Lunationis",
-			BeeClassification.LUNATION, 0xFFFFFF, 0xEFEFDF, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.LUNATION, 0xFFFFFF, 0x7C7C7C, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	CORE("Core", "Core",
-			BeeClassification.CORE, 0xFFFFFF, 0x992222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.CORE, 0xFFFFFF, 0x222222, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	MARS("Mars", "March",
-			BeeClassification.MARS, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.MARS, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	SATELLITE("Satellite", "Satellite",
-			BeeClassification.SATELLITE, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.SATELLITE, 0xFF0000, 0xFF6622, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	TERRA("Terra", "Terra",
-			BeeClassification.TERRA, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.TERRA, 0xFF0000, 0xFF9922, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	ASTEROID("Asteroid", "Asteroidem",
-			BeeClassification.ASTEROID, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.ASTEROID, 0x222222, 0x222299, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	TERRENE("Terrene", "Terrenis",
-			BeeClassification.TERRENE, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.TERRENE, 0x222222, 0x2266BB, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	PLANETOID("Planetoid", "Planetoid",
-			BeeClassification.PLANETOID, 0xFF0000, 0xFF2222, EnumTemperature.NORMAL, EnumHumidity.NORMAL, false, false, true),
+			BeeClassification.PLANETOID, 0x222222, 0x2299DD, EnumTemperature.NORMAL, EnumHumidity.ARID, false, false, true),
 	;
 	
 	public static void setupBeeSpecies()

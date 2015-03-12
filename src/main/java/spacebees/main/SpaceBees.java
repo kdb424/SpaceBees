@@ -58,8 +58,8 @@ public class SpaceBees
 	{
 		ModHelper.init();
 		
-		MinecraftForge.EVENT_BUS.register(new HiveGenMoon());
 		MinecraftForge.EVENT_BUS.register(new HiveGenMars());
+		MinecraftForge.EVENT_BUS.register(new HiveGenMoon());
 		MinecraftForge.EVENT_BUS.register(new HiveGenAsteroids());
 
 		LogHelper.info("Init completed");

@@ -6,6 +6,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import spacebees.bees.HiveDescription;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
+//TODO Learn why the code doesn't run though it appears to be called.
+
 public class HiveGenAsteroids
 {
     private WorldGenerator hiveGenerator;
@@ -13,7 +15,6 @@ public class HiveGenAsteroids
     @SubscribeEvent
     public void onPlanetDecorated(GCCoreEventPopulate.Post event)
     {
-    	System.out.println("Starting Asteroid Hive Gen");
         if (this.hiveGenerator == null)
         {
 			  this.hiveGenerator = new WorldGenHives(HiveDescription.ASTEROID.getBlock());

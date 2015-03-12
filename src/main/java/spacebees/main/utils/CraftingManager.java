@@ -1,27 +1,15 @@
 package spacebees.main.utils;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-//import spacebees.item.ItemCapsule;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import spacebees.item.types.CombType;
-import spacebees.item.types.DropType;
-//import spacebees.item.types.FluidType;
-import spacebees.item.types.NuggetType;
-import spacebees.item.types.PollenType;
 import spacebees.item.types.PropolisType;
 import spacebees.item.types.WaxType;
 import spacebees.main.Config;
 import spacebees.main.utils.compat.ForestryHelper;
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
+
 
 public class CraftingManager {
 	public static void registerLiquidContainers() {
@@ -38,19 +26,34 @@ public class CraftingManager {
 	}
 
 	private static void setupVanillaCrafting() {
-//		ItemStack input;
-//		ItemStack output;		
-		//TODO Give recipe
-		
-		ItemStack sludge = new ItemStack(micdoodle8.mods.galacticraft.planets.mars.items.MarsItems.bucketSludge);
-		sludge.stackSize = 1;
-		//TODO Use better sticks
-		ItemStack stick = new ItemStack(Items.stick);
-		GameRegistry.addRecipe(new ItemStack(Config.hiveFrameMars),
-				" s ",
-				"sbs",
-				" s ",
-		        'b', sludge, 's', stick);
+		//TODO Re-enable later
+//		ItemStack sludge = new ItemStack(micdoodle8.mods.galacticraft.planets.mars.items.MarsItems.bucketSludge);
+//		sludge.stackSize = 1;
+//		//TODO Use better sticks
+//		ItemStack stick = new ItemStack(Items.stick);
+//		GameRegistry.addRecipe(new ItemStack(Config.hiveFrameMars),
+//				" s ",
+//				"sbs",
+//				" s ",
+//		        'b', sludge, 's', stick);
+//		
+//		ItemStack cheese = new ItemStack(micdoodle8.mods.galacticraft.core.items.GCItems.cheeseCurd);
+//		cheese.stackSize = 1;
+//		//TODO Use better sticks
+//		GameRegistry.addRecipe(new ItemStack(Config.hiveFrameMoon),
+//				" s ",
+//				"scs",
+//				" s ",
+//		        'c', cheese, 's', stick);
+//		
+//		ItemStack methane = new ItemStack(micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems.methaneCanister);
+//		methane.stackSize = 1;
+//		//TODO Use better sticks
+//		GameRegistry.addRecipe(new ItemStack(Config.hiveFrameMoon),
+//				" s ",
+//				"sms",
+//				" s ",
+//		        'm', methane, 's', stick);
 
 
 		// Space capsules
